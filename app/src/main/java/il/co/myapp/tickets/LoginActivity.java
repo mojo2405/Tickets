@@ -1,7 +1,6 @@
 package il.co.myapp.tickets;
 
 import android.content.Intent;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
@@ -16,6 +15,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
 import org.json.JSONObject;
+
+import il.co.myapp.tickets.model.User;
 
 public class LoginActivity extends FragmentActivity
 {

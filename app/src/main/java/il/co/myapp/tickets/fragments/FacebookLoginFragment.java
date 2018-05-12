@@ -26,7 +26,7 @@ import java.util.Arrays;
 
 import il.co.myapp.tickets.LoginActivity;
 import il.co.myapp.tickets.R;
-import il.co.myapp.tickets.User;
+import il.co.myapp.tickets.model.User;
 
 public class FacebookLoginFragment extends Fragment{
     private static final String TAG = FacebookLoginFragment.class.getSimpleName();

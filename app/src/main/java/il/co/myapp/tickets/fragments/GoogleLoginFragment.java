@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.facebook.CallbackManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -21,7 +20,7 @@ import com.google.android.gms.tasks.Task;
 
 import il.co.myapp.tickets.LoginActivity;
 import il.co.myapp.tickets.R;
-import il.co.myapp.tickets.User;
+import il.co.myapp.tickets.model.User;
 
 public class GoogleLoginFragment extends Fragment {
 

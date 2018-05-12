@@ -1,4 +1,4 @@
-package il.co.myapp.tickets;
+package il.co.myapp.tickets.model;
 
 public class User {
 
