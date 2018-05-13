@@ -137,7 +137,8 @@ public class LoginActivity extends FragmentActivity
 
 
     public void loginSuccess (User user) {
-        Intent intent = new Intent(this, SendReportOptionsActivity.class);
+
+        Intent intent = new Intent(this, TicketDetailsActivity.class);
 
         intent.putExtra("name", user.getName());
         intent.putExtra("email", user.getEmail());

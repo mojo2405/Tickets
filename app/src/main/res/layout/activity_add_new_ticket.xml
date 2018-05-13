@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/newTicketDetailsLabelId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/newTicketDetails"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsLabelId"
+>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/newTicketMainConstraintLayoutId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layoutDirection="rtl">
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/newTicketCaptureReportId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_camera"
+                android:focusableInTouchMode="true"/>
+
+            <ProgressBar
+                android:id="@+id/newTicketProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/newTicketDetailsRowTen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/newTicketDetailsRowOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newTicketCaptureReportId"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newTicketCaptureReportId">
+
+                <EditText
+                    android:id="@+id/newTicketDriverNameId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketDriverName"
+                    android:tag="DriverName"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketTicketNumberId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketPenaltyNumber"
+                    android:tag="PenaltyNumber"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketTicketPrintDateId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketPrintingDate"
+                    android:tag="PrintingDate"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/newTicketDetailsRowTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newTicketDetailsRowOne"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsRowOne">
+
+                <EditText
+                    android:id="@+id/newTicketIdPassportNumberId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketIdPassportNumber"
+                    android:tag="IdPassportNumber"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketIdPassportTypeId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketIdPassportType"
+                    android:tag="IdPassportType"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketTicketLicenseTypeId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketLicenseType"
+                    android:tag="LicenseType"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/newTicketDetailsRowThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newTicketDetailsRowTwo"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsRowTwo">
+
+                <EditText
+                    android:id="@+id/newTicketIdLicenseNumberId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketLicenseNumber"
+                    android:tag="LicenseNumber"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketIdCityId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="4"
+                    android:hint="@string/newTicketCity"
+                    android:tag="City"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketTicketStreetId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="3"
+                    android:hint="@string/newTicketStreet"
+                    android:tag="Street"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketTickeHouseNumberId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketHouseNumber"
+                    android:tag="HouseNumber"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketTickeZipCodeId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketZipCode"
+                    android:tag="ZipCode"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/newTicketDetailsRowFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newTicketDetailsRowThree"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsRowThree">
+
+                <EditText
+                    android:id="@+id/newTicketIdPhoneNumberId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketPhoneNumber"
+                    android:tag="PhoneNumber"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketIdPenaltyDateId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketPenaltyDate"
+                    android:tag="PenaltyDate"
+                    android:textSize="13dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/newTicketDetailsRowFive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newTicketDetailsRowFour"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsRowFour">
+
+                <EditText
+                    android:id="@+id/newTicketDayNumberId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketDayNumber"
+                    android:tag="DayNumber"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketIdPenaltyLocationId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketPenaltyLocation"
+                    android:tag="PenaltyLocation"
+                    android:textSize="13dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/newTicketDetailsRowSix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newTicketDetailsRowFive"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsRowFive">
+
+                <EditText
+                    android:id="@+id/newTicketIdPenaltyDescriptionId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:hint="@string/newTicketPenaltyDescription"
+                    android:tag="PenaltyDescription"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/newTicketDetailsRowSeven"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newTicketDetailsRowSix"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsRowSix">
+
+                <EditText
+                    android:id="@+id/newTicketIdPenaltyNotesId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:hint="@string/newTicketPenaltyNotes"
+                    android:tag="PenaltyNotes"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/newTicketDetailsRowEight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newTicketDetailsRowSeven"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsRowSeven">
+
+                <EditText
+                    android:id="@+id/newTicketIdDriverNotesId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:hint="@string/newTicketDriverNotes"
+                    android:tag="DriverNotes"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/newTicketDetailsRowNine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newTicketDetailsRowEight"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsRowEight">
+
+                <EditText
+                    android:id="@+id/newTicketIdPlateTypeId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketPlateType"
+                    android:tag="PlateType"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketIdVehiclePlateNumberId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketVehiclePlateNumber"
+                    android:tag="VehiclePlateNumber"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/newTicketDetailsRowTen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newTicketDetailsRowNine"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsRowNine">
+
+                <EditText
+                    android:id="@+id/newTicketVehicleTypeId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketVehicleType"
+                    android:tag="VehicleType"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketVehicleColorId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketVehicleColor"
+                    android:tag="VehicleColor"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketVehicleModelId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketVehicleModel"
+                    android:tag="VehicleModel"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketVehicleBMSymbolId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketBMSymbol"
+                    android:tag="BMSymbol"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+            android:id="@+id/newTicketDetailsRowEleven"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/newTicketDetailsRowTen"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsRowTen"
+                >
+
+                <EditText
+                    android:id="@+id/newTicketSeifTakanaId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketSeifTakana"
+                    android:tag="SeifTakana"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketSemelAveraId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketSemelAvera"
+                    android:tag="SemelAvera"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/newTicketPenaltyPointsId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/newTicketPenaltyPoints"
+                    android:tag="PenaltyPoints"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <Button
+            android:id="@+id/newTicketsubmitTicket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/newTicketDetailsRowEleven"
+            android:text="@string/newTicketSubmit"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsRowEleven"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

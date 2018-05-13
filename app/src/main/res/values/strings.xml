@@ -10,7 +10,7 @@
     <string name="consultLawyerButton">בקשה להתייעצות עם עו\"ד</string>
     <string name="LoginTitle">התחברות</string>
     <string name="LoginTextButton">התחברות</string>
-    <string name="LogoutTextButton">התנתקות</string>
+    <string name="LogoutTextButton">התנתק</string>
     <string name="google_signin_button_text">התחברות עם Google</string>
     <string name="facebook_app_id">1153380481468648</string>
     <string name="fb_login_protocol_scheme">fb1153380481468648</string>
@@ -20,4 +20,85 @@
     <string name="hiString">שלום %s </string>
     <string name="nextButton">המשך</string>
     <string name="disconnectButton">התנתק</string>
+
+    <string name="username_hint">שם משתמש</string>
+    <string name="password_hint">סיסמה</string>
+    <string name="login_button">התחבר</string>
+    <string name="login_label">כניסה לחשבון</string>
+    <string name="create_account_label">צור חשבון חדש</string>
+
+    <string name="create_act">צור חשבון חדש</string>
+    <string name="confirm_password_hint">הקלד סיסמה שוב</string>
+    <string name="create_account_button">צור חשבון</string>
+    <string name="wrong_username">אימייל לא תקין</string>
+    <string name="wrong_password">סיסמה לא תקינה</string>
+    <string name="mismatch_password">הסיסמאות לא תואמות</string>
+
+    <string name="ticketDetailsDriversName">שם נהג</string>
+    <string name="ticketDetailsCarsNumber">מס רכב</string>
+    <string name="ticketDetailsTicketNumber">מס דוח</string>
+    <string name="ticketDetailsTicketDate">תאריך קבלת הדוח</string>
+    <string name="ticketDetailsDayOfWeek">יום בשבוע</string>
+    <string name="ticketDetailsHour">שעה</string>
+    <string name="ticketDetailsPlace">תאור המקום</string>
+    <string name="ticketDetailsFelonyClause">סעיף העברה</string>
+    <string name="ticketDetailsPoints">נקודות</string>
+    <string name="ticketDetailsDriversRequest">בקשת הנהג</string>
+    <string name="ticketDetailsOfficeStatus">סטטוס טיפול</string>
+    <string name="ticketDetailsDetials">פרטים</string>
+
+    <string name="dashboardTitle">דוחות</string>
+
+    <string name="newTicketSelectDriver">בחר נהג</string>
+    <string name="newTicketDetails">פרטי הדוח</string>
+    <string name="newTicketAddDriver">הוסף נהג</string>
+
+
+    <string name="newTicketCancelLabel">בחר סיבה לביטול דוח</string>
+    <string name="newTicketCancelReasonOne">בקשה לביטול דוח</string>
+    <string name="newTicketCancelReasonTwo">בקשה להישפט</string>
+    <string name="newTicketCancelReasonThree">בקשה להסבת דוח</string>
+    <string name="newTicketCancelReasonFour">בקשה להמהרת דוח באזהרה</string>
+    <string name="newTicketCancelReasonFive">שירות ערעור אוטומטי בהתאם לסוג העבירה</string>
+    <string name="newTicketCancelReasonSix">טענה על מכירת הרכב לפני ביצוע העבירה</string>
+    <string name="newTicketCancelReasonSeven">טענה שלא היה במקום העבירה</string>
+    <string name="newTicketCancelReasonEight">תוספת טיפול עורך דין</string>
+
+    <string name="newDriverTitle">הוסף נהג חדשי</string>
+    <string name="newDriverFirstName">שם פרטי</string>
+    <string name="newDriverLastName">שם משפחה</string>
+    <string name="newDriverDrivingLicenseNumber">מספר רשיון נהיגה</string>
+    <string name="newDriverIdNumber">מס תעודת זהות</string>
+    <string name="newDriverCreateDriver">צור נהג</string>
+
+    <string name="newTicketDriverName">שם הנהג</string>
+    <string name="newTicketPenaltyNumber">מספר הדוח</string>
+    <string name="newTicketPrintingDate">תאריך הדפסה</string>
+    <string name="newTicketIdPassportNumber">מספר דרכון או תעודת זהות</string>
+    <string name="newTicketIdPassportType">סוג תעודה</string>
+    <string name="newTicketLicenseType">סוג רשיון</string>
+    <string name="newTicketLicenseNumber">מספר רשיון</string>
+    <string name="newTicketCity">עיר</string>
+    <string name="newTicketStreet">רחוב</string>
+    <string name="newTicketHouseNumber">מספר בית</string>
+    <string name="newTicketZipCode">מיקוד</string>
+    <string name="newTicketPhoneNumber">מספר טלפון</string>
+    <string name="newTicketPenaltyDate">תאריך ביצוע העבירה</string>
+    <string name="newTicketDayNumber">יום ביצוע העברה</string>
+    <string name="newTicketPenaltyLocation">מיקום ביצוע העברה</string>
+    <string name="newTicketPenaltyDescription">תיאור העברה</string>
+    <string name="newTicketPenaltyNotes">הערות השוטר</string>
+    <string name="newTicketDriverNotes">הערות הנהג</string>
+    <string name="newTicketPlateType">סוג לוחית רישוי</string>
+    <string name="newTicketVehiclePlateNumber">מספר לוחית רישוי</string>
+    <string name="newTicketVehicleType">סוג רכב</string>
+    <string name="newTicketVehicleColor">צבע הרכב</string>
+    <string name="newTicketVehicleModel">מודל הרכב</string>
+    <string name="newTicketBMSymbol">מספר יצרן</string>
+    <string name="newTicketSeifTakana">סעיף תקנה</string>
+    <string name="newTicketSemelAvera">סמל עבירה</string>
+    <string name="newTicketPenaltyPoints">מספר נקודות</string>
+    <string name="newTicketSubmit">שלח דוח</string>
+
+
 </resources>
