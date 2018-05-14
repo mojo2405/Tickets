@@ -73,13 +73,11 @@ public class TicketDetailsActivity extends AppCompatActivity{
     private Button submitTicketButton;
     private String pathToPhotoFile;
     HashMap<String, EditText> ticketTextEditFields;
-//    private List<Driver> driversList;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        driversList = new ArrayList<>();
         setContentView(R.layout.activity_add_new_ticket);
         captureReportImage = findViewById(R.id.newTicketCaptureReportId);
         captureReportImage.setOnClickListener(new View.OnClickListener() {
@@ -89,28 +87,8 @@ public class TicketDetailsActivity extends AppCompatActivity{
             }
         });
         context = this;
-//        driversSpinner = findViewById(R.id.newTicketDriverSpinnerId);
-//        addDriverButton = findViewById(R.id.newTicketAddDriverButtonId);
+
         progressBar = findViewById(R.id.newTicketProgressBar);
-//        cancelReasonRadioGroup = findViewById(R.id.newTicketRadioGroupId);
-//        cancelReasonRadioGroup.clearCheck();
-//        cancelReasonRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                RadioButton rb = group.findViewById(checkedId);
-////                if (null != rb && checkedId > -1) {
-////                    selectedCancelReason = rb.getText().toString();
-////                }
-//            }
-//        });
-
-
-//        addDriverButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                startActivity(new Intent(this, AddDriverActivity.class));
-//            }
-//        });
 
 
         submitTicketButton = (Button) findViewById(R.id.newTicketsubmitTicket);
@@ -135,27 +113,9 @@ public class TicketDetailsActivity extends AppCompatActivity{
 //        });
 
 
-//        DriversData driverData = new DriversData();
         final List<String> driversArray = new ArrayList<String>();
 
 
-//        driverData.GetDriversData(new AsyncDriversResponse() {
-//            @Override
-//            public void DriversResponseReceived(List<Driver> driverList) {
-//                driversList = driverList;
-//                Log.d("drivers", driverList.toString());
-//
-//                for (int i = 0; i < driverList.size(); i++) {
-//                    driversArray.add(driverList.get(i).GetSpinnerValue());
-//                }
-//
-//                final ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-//                        context, android.R.layout.simple_spinner_item, driversArray);
-//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                driversSpinner.setAdapter(adapter);
-//
-//            }
-//        });
 
         getTicketFieldsReferences();
 

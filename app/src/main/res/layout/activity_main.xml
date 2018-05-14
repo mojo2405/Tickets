@@ -22,18 +22,18 @@
 
         <Button
             android:id="@+id/cancelButton"
-            style="@style/Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:theme="@style/AppTheme.BlueButton"
             android:text="@string/cancel" />
 
         <Button
             android:id="@+id/acceptButton"
-            style="@style/Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:theme="@style/AppTheme.BlueButton"
             android:text="@string/Accept" />
     </LinearLayout>
 

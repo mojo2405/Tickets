@@ -99,6 +99,12 @@
     <string name="newTicketSemelAvera">סמל עבירה</string>
     <string name="newTicketPenaltyPoints">מספר נקודות</string>
     <string name="newTicketSubmit">שלח דוח</string>
+    <string name="consultLawyerHeader">התייעצות עם עו\"ד</string>
+    <string name="fullNameLabel">שם מלא</string>
+    <string name="phoneContactForm">טלפון</string>
+    <string name="mailContactForm">כתובת דוא\"ל</string>
+    <string name="contactPageMessage">הידעת ?\n פנייה לעורך דין מורידה את חומרת העונש בכ - 89% מהמקרים</string>
+    <string name="sendButtonContactForm">שלח</string>
 
 
 </resources>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -17,7 +16,7 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/newTicketDetails"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +39,8 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/newTicketMainConstraintLayoutId"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layoutDirection="rtl">
+            android:layout_height="wrap_content"
+            >
 
 
             <android.support.design.widget.FloatingActionButton
@@ -54,6 +53,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:clickable="true"
+                android:focusable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -101,7 +101,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketDriverName"
                     android:tag="DriverName"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketTicketNumberId"
@@ -112,7 +112,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketPenaltyNumber"
                     android:tag="PenaltyNumber"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketTicketPrintDateId"
@@ -123,7 +123,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketPrintingDate"
                     android:tag="PrintingDate"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -148,7 +148,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketIdPassportNumber"
                     android:tag="IdPassportNumber"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketIdPassportTypeId"
@@ -159,7 +159,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketIdPassportType"
                     android:tag="IdPassportType"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketTicketLicenseTypeId"
@@ -170,7 +170,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketLicenseType"
                     android:tag="LicenseType"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -195,7 +195,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketLicenseNumber"
                     android:tag="LicenseNumber"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketIdCityId"
@@ -206,7 +206,7 @@
                     android:layout_weight="4"
                     android:hint="@string/newTicketCity"
                     android:tag="City"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketTicketStreetId"
@@ -217,7 +217,7 @@
                     android:layout_weight="3"
                     android:hint="@string/newTicketStreet"
                     android:tag="Street"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketTickeHouseNumberId"
@@ -228,7 +228,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketHouseNumber"
                     android:tag="HouseNumber"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketTickeZipCodeId"
@@ -239,7 +239,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketZipCode"
                     android:tag="ZipCode"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -264,7 +264,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketPhoneNumber"
                     android:tag="PhoneNumber"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketIdPenaltyDateId"
@@ -275,7 +275,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketPenaltyDate"
                     android:tag="PenaltyDate"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
 
             </LinearLayout>
@@ -304,7 +304,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketDayNumber"
                     android:tag="DayNumber"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketIdPenaltyLocationId"
@@ -313,7 +313,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketPenaltyLocation"
                     android:tag="PenaltyLocation"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
 
             </LinearLayout>
@@ -341,7 +341,7 @@
                     android:layout_marginStart="5dp"
                     android:hint="@string/newTicketPenaltyDescription"
                     android:tag="PenaltyDescription"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -367,7 +367,7 @@
                     android:layout_marginStart="5dp"
                     android:hint="@string/newTicketPenaltyNotes"
                     android:tag="PenaltyNotes"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -393,7 +393,7 @@
                     android:layout_marginStart="5dp"
                     android:hint="@string/newTicketDriverNotes"
                     android:tag="DriverNotes"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -420,7 +420,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketPlateType"
                     android:tag="PlateType"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketIdVehiclePlateNumberId"
@@ -431,7 +431,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketVehiclePlateNumber"
                     android:tag="VehiclePlateNumber"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -458,7 +458,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketVehicleType"
                     android:tag="VehicleType"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketVehicleColorId"
@@ -469,7 +469,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketVehicleColor"
                     android:tag="VehicleColor"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketVehicleModelId"
@@ -480,7 +480,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketVehicleModel"
                     android:tag="VehicleModel"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketVehicleBMSymbolId"
@@ -491,7 +491,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketBMSymbol"
                     android:tag="BMSymbol"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -519,7 +519,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketSeifTakana"
                     android:tag="SeifTakana"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketSemelAveraId"
@@ -530,7 +530,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketSemelAvera"
                     android:tag="SemelAvera"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketPenaltyPointsId"
@@ -541,7 +541,7 @@
                     android:layout_weight="1"
                     android:hint="@string/newTicketPenaltyPoints"
                     android:tag="PenaltyPoints"
-                    android:textSize="13dp" />
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <Button
@@ -550,6 +550,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/newTicketDetailsRowEleven"
             android:text="@string/newTicketSubmit"
+                android:theme="@style/AppTheme.BlueButton"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"

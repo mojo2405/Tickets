@@ -41,21 +41,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="@string/cancelReportButton" />
+            android:text="@string/cancelReportButton"
+            android:theme="@style/AppTheme.BlueButton"/>
 
         <Button
             android:id="@+id/askForJudgeButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="@string/askForJudgeButton" />
+            android:text="@string/askForJudgeButton"
+            android:theme="@style/AppTheme.BlueButton"/>
 
         <Button
             android:id="@+id/askForLawyerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="@string/consultLawyerButton" />
+            android:text="@string/consultLawyerButton"
+            android:theme="@style/AppTheme.BlueButton"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
