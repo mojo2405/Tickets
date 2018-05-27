@@ -32,5 +32,13 @@ public class OptionsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.askForJudgeButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),ContactLawyerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
