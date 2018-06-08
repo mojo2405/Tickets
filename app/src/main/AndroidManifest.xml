@@ -30,7 +30,7 @@
                 android:resource="@xml/file_paths"></meta-data>
         </provider>
 
-        <activity android:name=".MainActivity"
+        <activity android:name=".DisclaimerActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,6 +38,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".WelcomeActivity"
+            android:screenOrientation="portrait" />
 
         <activity android:name=".OptionsActivity"
             android:screenOrientation="portrait" />

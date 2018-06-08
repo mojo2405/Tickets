@@ -178,6 +178,15 @@ NOTICKET  מעניקה לך בזאת, ואתה מקבל, רישיון אישי, 
     <string name="sendButtonContactForm">שלח</string>
     <string name="about">אודות</string>
     <string name="contactUs">צור קשר</string>
+    <string name="qaMenuButton">שאלות ותשובות</string>
+    <string name="disclaimerMenuButton">תנאי שימוש</string>
+    <string name="connectMenuButton">התחברות</string>
+    <string name="invitingMessageWelcomeScreen">הודעת פתיחה מזמינה על האפליקציה</string>
+    <string name="teaser1">טיזר 1</string>
+    <string name="teaser2">טיזר 2</string>
+    <string name="teaser3">טיזר 3</string>
 
-
+    <string name="scanStarted">סריקה החלה</string>
+    <string name="scanFinished">סריקה הסתיימה בהצלחה</string>
+    <string name="scanFailed">סריקה נכשלה</string>
 </resources>

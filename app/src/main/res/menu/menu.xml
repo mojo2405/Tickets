@@ -1,0 +1,24 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+
+    <item
+        android:id="@+id/about_menu_item"
+        android:title="@string/about"
+        />
+
+    <item
+        android:id="@+id/contact_us_menu_item"
+        android:title="@string/contactUs" />
+
+    <item
+        android:id="@+id/qa_menu_item"
+        android:title="@string/qaMenuButton" />
+    <item
+        android:id="@+id/disclaimer_menu_item"
+        android:title="@string/disclaimerMenuButton" />
+    <item
+        android:id="@+id/connect_menu_item"
+        android:title="@string/connectMenuButton" />
+</menu>

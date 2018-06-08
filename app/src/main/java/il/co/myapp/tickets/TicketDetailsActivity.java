@@ -274,14 +274,24 @@ public class TicketDetailsActivity extends AppCompatActivity{
         @Override
         protected void onPreExecute() {
             progressBar.setVisibility(View.VISIBLE);
+            Toast.makeText(getApplicationContext(),
+                    context.getString(R.string.scanStarted),
+                    Toast.LENGTH_LONG).show();
         }
 
         @Override
         protected void onPostExecute(BatchAnnotateImagesResponse response) {
+
             detectedWordsFromTicket = new ArrayList<>();
-            if (response == null || response.getResponses() == null)
+            if (response == null || response.getResponses() == null) {
                 progressBar.setVisibility(View.GONE);
-            else {
+                Toast.makeText(getApplicationContext(),
+                        context.getString(R.string.scanFailed),
+                        Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(),
+                        context.getString(R.string.scanFinished),
+                        Toast.LENGTH_LONG).show();
                 final List<EntityAnnotation> text = response.getResponses()
                         .get(0).getTextAnnotations();
                 for (int i = 0; i < text.size(); i++) {
