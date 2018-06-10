@@ -7,15 +7,22 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.login.Login;
+import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.common.Scopes;
+
 
 import org.json.JSONObject;
 
+import il.co.myapp.tickets.controller.AppController;
+import il.co.myapp.tickets.data.AsyncLoginResponse;
 import il.co.myapp.tickets.model.User;
 
 public class LoginActivity extends FragmentActivity
@@ -50,6 +57,7 @@ public class LoginActivity extends FragmentActivity
         final AccessToken accessToken = AccessToken.getCurrentAccessToken();
         boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
         if (isLoggedIn) {
+            Log.v(TAG,"FACEBOOK TOKEN IS " + accessToken.getToken());
             getFacebookDetails(accessToken);
 
         }
@@ -59,6 +67,9 @@ public class LoginActivity extends FragmentActivity
         if (account == null) {
 
         } else {
+
+
+            Log.v(TAG,"GOOGLE TOKEN IS " + account.getIdToken());
             user.setName(account.getDisplayName());
             user.setEmail(account.getEmail());
 
@@ -72,7 +83,7 @@ public class LoginActivity extends FragmentActivity
 
 
 
-    public void getFacebookDetails(AccessToken accessToken) {
+    public void getFacebookDetails(final AccessToken accessToken) {
 
 
 
@@ -87,6 +98,7 @@ public class LoginActivity extends FragmentActivity
                         Bundle facebookData = getFacebookData(jsonObject);
                         user.setName(facebookData.getString("name"));
                         user.setEmail(facebookData.getString("email"));
+                        user.setAccessToken(accessToken.getToken());
                         setHelloText();
 
                         findViewById(R.id.google_login_fragment).setVisibility(View.GONE);
@@ -136,13 +148,25 @@ public class LoginActivity extends FragmentActivity
 
 
 
-    public void loginSuccess (User user) {
+    public void loginSuccess (final User user) {
 
-        Intent intent = new Intent(this, TicketDetailsActivity.class);
 
-        intent.putExtra("name", user.getName());
-        intent.putExtra("email", user.getEmail());
+        user.preformRegister(this, new AsyncLoginResponse() {
+            @Override
+            public void LoginResponseReceived(String response) {
+                if (response == "Success") {
+//                    progressBar.setVisibility(View.GONE);
+                    AppController.getInstance().setUser(user);
+                    startActivity(new Intent(LoginActivity.this, TicketDetailsActivity.class));
+                } else {
+//                    progressBar.setVisibility(View.GONE);
+                    Toast.makeText(getApplicationContext(),
+                            response, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
-        startActivity(intent);
+
+
     }
 }

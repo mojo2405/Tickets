@@ -55,6 +55,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import il.co.myapp.tickets.controller.AppController;
 import il.co.myapp.tickets.model.Ticket;
 import il.co.myapp.tickets.utils.TicketParser;
 
@@ -62,7 +63,7 @@ public class TicketDetailsActivity extends AppCompatActivity{
 
     static final int REQUEST_TAKE_PHOTO = 1;
     static final String GOOGLE_API_KEY = "AIzaSyB0a6pQ_pWETAOYm3v5ISJ-xrmE3ge766g";
-    private static final String TAG = "AddNewTicketActivity";
+    private static final String TAG = TicketDetailsActivity.class.getSimpleName();
     private Spinner driversSpinner;
     private Context context;
     private FloatingActionButton addDriverButton, captureReportImage;
@@ -87,6 +88,8 @@ public class TicketDetailsActivity extends AppCompatActivity{
             }
         });
         context = this;
+
+
 
         progressBar = findViewById(R.id.newTicketProgressBar);
 

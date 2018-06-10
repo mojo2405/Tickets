@@ -81,7 +81,6 @@ public class FacebookLoginFragment extends Fragment{
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
-                        Log.d(TAG,"Cool !");
 
                         String accessToken = loginResult.getAccessToken().getToken();
                         getFacebookDetails(loginResult.getAccessToken());
@@ -112,7 +111,7 @@ public class FacebookLoginFragment extends Fragment{
 
     }
 
-    public void getFacebookDetails(AccessToken accessToken) {
+    public void getFacebookDetails(final AccessToken accessToken) {
 
 
 
@@ -127,7 +126,7 @@ public class FacebookLoginFragment extends Fragment{
                         Bundle facebookData = getFacebookData(jsonObject);
                         user.setName(facebookData.getString("name"));
                         user.setEmail(facebookData.getString("email"));
-
+                        user.setAccessToken(accessToken.getToken());
                         ((LoginActivity) getActivity()).loginSuccess(user);
 
 
