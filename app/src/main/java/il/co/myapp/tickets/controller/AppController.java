@@ -27,4 +27,8 @@ public class AppController {
     public void set_token(String token) {
         this.token = token;
     }
+
+    public String get_token() {
+        return token;
+    }
 }

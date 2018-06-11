@@ -43,6 +43,7 @@ import com.google.api.services.vision.v1.model.Image;
 import com.google.api.services.vision.v1.model.ImageContext;
 
 import org.apache.commons.io.output.ByteArrayOutputStream;
+import org.json.JSONException;
 
 import java.io.File;
 import java.io.IOException;
@@ -56,6 +57,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import il.co.myapp.tickets.controller.AppController;
+import il.co.myapp.tickets.data.AsyncTicketResponse;
+import il.co.myapp.tickets.data.TrafficTicketData;
 import il.co.myapp.tickets.model.Ticket;
 import il.co.myapp.tickets.utils.TicketParser;
 
@@ -95,28 +98,27 @@ public class TicketDetailsActivity extends AppCompatActivity{
 
 
         submitTicketButton = (Button) findViewById(R.id.newTicketsubmitTicket);
-//        submitTicketButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.w("driverlist", driversList.toString());
-//                if (driversList == null || selectedCancelReason == null) {
-//                    Toast.makeText(getApplicationContext(),
-//                            "אנא בחר נהג וסיבת בקשה", Toast.LENGTH_LONG).show();
-//                    return;
-//                }
-//                new TrafficTicketData().SubmitTicket(GetTicketsDetailsValues(), new AsyncTicketResponse() {
-//                    @Override
-//                    public void TicketsDataReceived(List<Ticket> tickets) {
-//
-//                        Log.w(TAG, tickets.toString());
-//                        startActivity(new Intent(AddNewTicketActivity.this, DashboardActivity.class));
-//                    }
-//                });
-//            }
-//        });
+        submitTicketButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    new TrafficTicketData().SubmitTicket(getApplicationContext(),
+                            GetTicketsDetailsValues(), new AsyncTicketResponse() {
+                        @Override
+                        public void TicketsDataReceived(List<Ticket> tickets) {
+
+                            Log.w(TAG, tickets.toString());
+                            startActivity(new Intent(TicketDetailsActivity.this,
+                                    OptionsActivity.class));
+                        }
+                    });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
 
-        final List<String> driversArray = new ArrayList<String>();
 
 
 
