@@ -1,4 +1,4 @@
-package il.co.myapp.tickets;
+package il.co.myapp.tickets.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,11 +10,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -23,9 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -54,8 +49,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.ResourceBundle;
 
+import il.co.myapp.tickets.R;
 import il.co.myapp.tickets.controller.AppController;
 import il.co.myapp.tickets.data.AsyncTicketResponse;
 import il.co.myapp.tickets.data.TrafficTicketData;
@@ -128,8 +123,7 @@ public class TicketDetailsActivity extends AppCompatActivity{
 
     private HashMap<String, String> GetTicketsDetailsValues() {
         HashMap<String, String> tickets = new HashMap<>();
-//        tickets.put("id", driversList.get(0).GetDriverId());
-        tickets.put("DriverRequest", selectedCancelReason);
+        tickets.put("email",AppController.getInstance().getUser().getEmail());
         for (String key : ticketTextEditFields.keySet()) {
             if (ticketTextEditFields.get(key).getText().length()==0)
                 tickets.put(key, null);

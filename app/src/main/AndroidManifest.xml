@@ -30,7 +30,7 @@
                 android:resource="@xml/file_paths"></meta-data>
         </provider>
 
-        <activity android:name=".DisclaimerActivity"
+        <activity android:name=".activities.DisclaimerActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,20 +39,20 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".WelcomeActivity"
+        <activity android:name=".activities.WelcomeActivity"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".OptionsActivity"
+        <activity android:name=".activities.OptionsActivity"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".LoginActivity"
+        <activity android:name=".activities.LoginActivity"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".TicketDetailsActivity"
+        <activity android:name=".activities.TicketDetailsActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"/>
 
-        <activity android:name=".ContactLawyerActivity"
+        <activity android:name=".activities.ContactLawyerActivity"
             android:screenOrientation="portrait"/>
 
         <meta-data android:name="com.facebook.sdk.ApplicationId"

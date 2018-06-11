@@ -1,4 +1,4 @@
-package il.co.myapp.tickets;
+package il.co.myapp.tickets.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,15 +12,13 @@ import android.widget.Toast;
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
-import com.facebook.login.Login;
-import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.common.Scopes;
 
 
 import org.json.JSONObject;
 
+import il.co.myapp.tickets.R;
 import il.co.myapp.tickets.controller.AppController;
 import il.co.myapp.tickets.data.AsyncLoginResponse;
 import il.co.myapp.tickets.model.User;

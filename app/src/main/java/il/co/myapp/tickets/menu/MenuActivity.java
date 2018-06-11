@@ -1,21 +1,15 @@
 package il.co.myapp.tickets.menu;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.style.AlignmentSpan;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
-import il.co.myapp.tickets.ContactLawyerActivity;
-import il.co.myapp.tickets.DisclaimerActivity;
-import il.co.myapp.tickets.LoginActivity;
+import il.co.myapp.tickets.activities.ContactLawyerActivity;
+import il.co.myapp.tickets.activities.DisclaimerActivity;
+import il.co.myapp.tickets.activities.LoginActivity;
 import il.co.myapp.tickets.R;
 
 public class MenuActivity extends AppCompatActivity {

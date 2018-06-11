@@ -24,7 +24,7 @@ import org.json.JSONObject;
 
 import java.util.Arrays;
 
-import il.co.myapp.tickets.LoginActivity;
+import il.co.myapp.tickets.activities.LoginActivity;
 import il.co.myapp.tickets.R;
 import il.co.myapp.tickets.model.User;
 

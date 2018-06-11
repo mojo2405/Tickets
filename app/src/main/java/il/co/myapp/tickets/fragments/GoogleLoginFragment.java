@@ -18,7 +18,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-import il.co.myapp.tickets.LoginActivity;
+import il.co.myapp.tickets.activities.LoginActivity;
 import il.co.myapp.tickets.R;
 import il.co.myapp.tickets.model.User;
 

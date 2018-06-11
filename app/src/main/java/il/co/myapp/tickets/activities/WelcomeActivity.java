@@ -1,10 +1,11 @@
-package il.co.myapp.tickets;
+package il.co.myapp.tickets.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import il.co.myapp.tickets.R;
 import il.co.myapp.tickets.menu.MenuActivity;
 
 public class WelcomeActivity extends MenuActivity {

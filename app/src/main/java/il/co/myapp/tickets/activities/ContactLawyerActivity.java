@@ -1,8 +1,10 @@
-package il.co.myapp.tickets;
+package il.co.myapp.tickets.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import il.co.myapp.tickets.R;
 
 public class ContactLawyerActivity extends AppCompatActivity {
     @Override
