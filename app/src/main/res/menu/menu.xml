@@ -21,4 +21,7 @@
     <item
         android:id="@+id/connect_menu_item"
         android:title="@string/connectMenuButton" />
+    <item
+        android:id="@+id/ticket_list_menu_item"
+        android:title="@string/ticketListMenuButton" />
 </menu>

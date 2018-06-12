@@ -39,6 +39,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activities.DashboardActivity"
+            android:screenOrientation="portrait" />
+
         <activity android:name=".activities.WelcomeActivity"
             android:screenOrientation="portrait" />
 
@@ -49,6 +52,10 @@
             android:screenOrientation="portrait" />
 
         <activity android:name=".activities.TicketDetailsActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".activities.NewTicketActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"/>
 

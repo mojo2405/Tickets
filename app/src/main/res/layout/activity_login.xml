@@ -55,14 +55,14 @@
 
         <fragment
             android:id="@+id/facebook_login_fragment"
-            android:name="il.co.myapp.tickets.fragments.FacebookLoginFragment"
+            android:name="il.co.myapp.tickets.activities.fragments.FacebookLoginFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
         <fragment
             android:id="@+id/google_login_fragment"
-            android:name="il.co.myapp.tickets.fragments.GoogleLoginFragment"
+            android:name="il.co.myapp.tickets.activities.fragments.GoogleLoginFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1" />

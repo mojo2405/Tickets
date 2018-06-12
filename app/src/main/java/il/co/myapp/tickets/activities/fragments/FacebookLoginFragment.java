@@ -1,4 +1,4 @@
-package il.co.myapp.tickets.fragments;
+package il.co.myapp.tickets.activities.fragments;
 
 import android.app.Fragment;
 import android.content.Intent;

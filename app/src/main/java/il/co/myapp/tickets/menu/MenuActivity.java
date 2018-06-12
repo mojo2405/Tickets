@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import il.co.myapp.tickets.activities.ContactLawyerActivity;
+import il.co.myapp.tickets.activities.DashboardActivity;
 import il.co.myapp.tickets.activities.DisclaimerActivity;
 import il.co.myapp.tickets.activities.LoginActivity;
 import il.co.myapp.tickets.R;
@@ -56,6 +57,10 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
 
+            case R.id.ticket_list_menu_item:
+                intent = new Intent(this.getApplication(),DashboardActivity.class);
+                startActivity(intent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

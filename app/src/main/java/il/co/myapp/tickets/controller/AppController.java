@@ -1,5 +1,6 @@
 package il.co.myapp.tickets.controller;
 
+import il.co.myapp.tickets.model.Ticket;
 import il.co.myapp.tickets.model.User;
 
 public class AppController {
@@ -10,7 +11,8 @@ public class AppController {
 
     private User user;
     private String token;
-
+    private Ticket _viewableTicket;
+    
 
     public static AppController getInstance() {
         if(null == ourInstance){
@@ -31,4 +33,15 @@ public class AppController {
     public String get_token() {
         return token;
     }
+
+    public Ticket get_viewableTicket() {
+        return _viewableTicket;
+    }
+
+    public void set_viewableTicket(Ticket _viewableTicket) {
+        this._viewableTicket = _viewableTicket;
+    }
+
+
+
 }

@@ -67,6 +67,7 @@ public class TrafficTicketData {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Log.e(TAG,"Failed to get tickets list");
 
             }
         }) {

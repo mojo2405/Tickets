@@ -155,7 +155,7 @@ public class LoginActivity extends FragmentActivity
                 if (response == "Success") {
 //                    progressBar.setVisibility(View.GONE);
                     AppController.getInstance().setUser(user);
-                    startActivity(new Intent(LoginActivity.this, TicketDetailsActivity.class));
+                    startActivity(new Intent(LoginActivity.this, NewTicketActivity.class));
                 } else {
 //                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(getApplicationContext(),
