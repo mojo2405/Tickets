@@ -6,6 +6,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -83,7 +84,7 @@ public class User {
         loginParams.put("name", getName());
         loginParams.put("access_token", getAccessToken());
         loginParams.put("email", getEmail());
-//        loginParams.put("pushToken", FirebaseInstanceId.getInstance().getToken());
+        loginParams.put("pushToken", FirebaseInstanceId.getInstance().getToken());
         return loginParams;
     }
 
