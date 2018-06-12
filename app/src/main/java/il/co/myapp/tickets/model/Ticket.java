@@ -5,7 +5,7 @@ import java.util.List;
 public class Ticket {
 
     private String parsedDate;
-    private  String parsedTime;
+    private String parsedTime;
     private String ticketDay;
     private String driverName;
     private String ticketNumber;

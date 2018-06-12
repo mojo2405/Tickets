@@ -191,4 +191,5 @@ NOTICKET  מעניקה לך בזאת, ואתה מקבל, רישיון אישי, 
     <string name="scanFailed">סריקה נכשלה</string>
     <string name="dashboardHeader">הדוח\"ות שלי</string>
     <string name="ticketListMenuButton">רשימת דוחות</string>
+    <string name="submitLeadSucess">ההודעה נשלחה.</string>
 </resources>
