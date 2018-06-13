@@ -2,6 +2,7 @@ package il.co.myapp.tickets.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -14,6 +15,9 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInApi;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 
 import org.json.JSONObject;
@@ -28,6 +32,7 @@ public class LoginActivity extends FragmentActivity
     private static final String TAG = LoginActivity.class.getSimpleName();
 
     private User user = new User();
+    private String nextScreen = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,7 +46,7 @@ public class LoginActivity extends FragmentActivity
             }
         });
 
-
+        nextScreen = getIntent().getStringExtra("nextScreen");
 
         findViewById(R.id.nextButtonLogin).setVisibility(View.GONE);
         findViewById(R.id.hiLoginTextPage).setVisibility(View.GONE);
@@ -60,8 +65,13 @@ public class LoginActivity extends FragmentActivity
 
         }
 
+
+
         // Check if signed in in Google
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
+
+
         if (account == null) {
 
         } else {
@@ -155,7 +165,17 @@ public class LoginActivity extends FragmentActivity
                 if (response == "Success") {
 //                    progressBar.setVisibility(View.GONE);
                     AppController.getInstance().setUser(user);
-                    startActivity(new Intent(LoginActivity.this, NewTicketActivity.class));
+                    if ( null == nextScreen ) {
+                        startActivity(new Intent(LoginActivity.this, NewTicketActivity.class));
+                    }else {
+                        try {
+                            Class<?> c = Class.forName(nextScreen);
+                            startActivity(new Intent(LoginActivity.this, c));
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
                 } else {
 //                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(getApplicationContext(),

@@ -8,8 +8,9 @@ import android.view.View;
 import android.widget.Button;
 
 import il.co.myapp.tickets.R;
+import il.co.myapp.tickets.menu.MenuActivity;
 
-public class OptionsActivity extends AppCompatActivity {
+public class OptionsActivity extends MenuActivity {
 
     Button cancelReportButton;
 

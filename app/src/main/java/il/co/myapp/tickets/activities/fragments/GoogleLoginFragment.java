@@ -10,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInApi;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
@@ -57,12 +59,17 @@ public class GoogleLoginFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("39443762425-uv8rsehvmlgctb0phd6febrgbd72ebrd.apps.googleusercontent.com")
+                .requestIdToken("39443762425-r8a6jcdkoijk4i7o274cmragtfkf3jmq.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
+
 
 
 
@@ -109,11 +116,12 @@ public class GoogleLoginFragment extends Fragment {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            String idToken = account.getIdToken();
 
             // Signed in successfully, show authenticated UI.
             user.setName(account.getDisplayName());
             user.setEmail(account.getEmail());
-
+            user.setAccessToken(idToken);
             ((LoginActivity) getActivity()).loginSuccess(user);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
