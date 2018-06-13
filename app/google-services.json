@@ -15,11 +15,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "39443762425-bgo6n92geklqo4idkcg8moeh4odt6m8m.apps.googleusercontent.com",
-          "client_type": 3
+          "client_id": "39443762425-ev0dkpi9ja5teis8eoe0iad4hi1tag5f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "il.co.myapp.tickets",
+            "certificate_hash": "e013efac98ef4790dee64c580e37310c42dd3b27"
+          }
         },
         {
-          "client_id": "39443762425-uv8rsehvmlgctb0phd6febrgbd72ebrd.apps.googleusercontent.com",
+          "client_id": "39443762425-00jsddmngoc0t4rrbla2vgq16gkmn2hr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -33,7 +37,7 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
+          "status": 2,
           "other_platform_oauth_client": []
         },
         "ads_service": {

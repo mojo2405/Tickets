@@ -77,9 +77,10 @@ public class LoginActivity extends FragmentActivity
         } else {
 
 
-            Log.v(TAG,"GOOGLE TOKEN IS " + account.getIdToken());
             user.setName(account.getDisplayName());
             user.setEmail(account.getEmail());
+            user.setAccessToken(account.getIdToken());
+            user.setLoginType(user.GOOGLE);
 
             setHelloText();
 
@@ -107,6 +108,7 @@ public class LoginActivity extends FragmentActivity
                         user.setName(facebookData.getString("name"));
                         user.setEmail(facebookData.getString("email"));
                         user.setAccessToken(accessToken.getToken());
+                        user.setLoginType(user.FACEBOOK);
                         setHelloText();
 
                         findViewById(R.id.google_login_fragment).setVisibility(View.GONE);

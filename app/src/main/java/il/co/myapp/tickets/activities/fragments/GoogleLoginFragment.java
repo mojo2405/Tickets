@@ -64,7 +64,7 @@ public class GoogleLoginFragment extends Fragment {
 
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("39443762425-r8a6jcdkoijk4i7o274cmragtfkf3jmq.apps.googleusercontent.com")
+                .requestIdToken(getString(R.string.server_client_id))
                 .requestEmail()
                 .build();
         // Build a GoogleSignInClient with the options specified by gso.
@@ -122,6 +122,8 @@ public class GoogleLoginFragment extends Fragment {
             user.setName(account.getDisplayName());
             user.setEmail(account.getEmail());
             user.setAccessToken(idToken);
+            user.setLoginType(user.GOOGLE);
+
             ((LoginActivity) getActivity()).loginSuccess(user);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.

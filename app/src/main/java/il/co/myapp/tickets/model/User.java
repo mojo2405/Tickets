@@ -24,9 +24,13 @@ public class User {
     private String email;
     private String name;
     private String accessToken;
-
+    private String loginType;
 
     private static final String TAG = User.class.getSimpleName();
+
+    public static final String FACEBOOK = "facebook";
+    public static final String GOOGLE = "google";
+
 
     public User () {
 
@@ -85,6 +89,7 @@ public class User {
         loginParams.put("access_token", getAccessToken());
         loginParams.put("email", getEmail());
         loginParams.put("pushToken", FirebaseInstanceId.getInstance().getToken());
+        loginParams.put("loginType",getLoginType());
         return loginParams;
     }
 
@@ -97,4 +102,11 @@ public class User {
         this.accessToken = accessToken;
     }
 
+    public String getLoginType() {
+        return loginType;
+    }
+
+    public void setLoginType(String loginType) {
+        this.loginType = loginType;
+    }
 }

@@ -192,4 +192,5 @@ NOTICKET  מעניקה לך בזאת, ואתה מקבל, רישיון אישי, 
     <string name="dashboardHeader">הדוח\"ות שלי</string>
     <string name="ticketListMenuButton">רשימת דוחות</string>
     <string name="submitLeadSucess">ההודעה נשלחה.</string>
+    <string name="server_client_id">39443762425-00jsddmngoc0t4rrbla2vgq16gkmn2hr.apps.googleusercontent.com</string>
 </resources>

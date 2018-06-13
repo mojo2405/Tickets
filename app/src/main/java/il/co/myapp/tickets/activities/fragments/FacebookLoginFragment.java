@@ -126,6 +126,7 @@ public class FacebookLoginFragment extends Fragment{
                         Bundle facebookData = getFacebookData(jsonObject);
                         user.setName(facebookData.getString("name"));
                         user.setEmail(facebookData.getString("email"));
+                        user.setLoginType(user.FACEBOOK);
                         user.setAccessToken(accessToken.getToken());
                         ((LoginActivity) getActivity()).loginSuccess(user);
 
