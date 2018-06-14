@@ -102,7 +102,7 @@ public class FacebookLoginFragment extends Fragment{
             @Override
             protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken,
                                                        AccessToken currentAccessToken) {
-                if (currentAccessToken == null) {
+                if (currentAccessToken == null && getActivity() != null) {
                     getActivity().recreate();
                 }
             }
