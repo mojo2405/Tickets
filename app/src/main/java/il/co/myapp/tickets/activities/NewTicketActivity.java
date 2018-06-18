@@ -1,7 +1,9 @@
 package il.co.myapp.tickets.activities;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -228,28 +230,24 @@ public class NewTicketActivity extends AppCompatActivity{
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            Bitmap bitmap;
+            options.inSampleSize = 2;
+
             switch (requestCode) {
                 case REQUEST_TAKE_PHOTO:
                     new GoogleVision().execute();
                     break;
                 case GALLERY_REPORT_REQUEST:
-                    Uri selectedImage = data.getData();
-                    try {
-                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(
-                                getApplicationContext().getContentResolver(), selectedImage);
-
-                    } catch (IOException e) {
-                        Log.i(TAG, "Got exception " + e);
-                    }
+                        pathToPhotoFile = getRealPathFromURI(getContentResolver(),data.getData(),null);
+                        new GoogleVision().execute();
+                        Log.v(TAG,"Got path " + pathToPhotoFile);
                     break;
                 case GALLERY_ID_REQUEST:
-                    Uri selectedIdImage = data.getData();
                     try {
-                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(
-                                getApplicationContext().getContentResolver(), selectedIdImage);
-
+                        bitmap = getSelectedImage(data, options);
                     } catch (IOException e) {
-                        Log.i(TAG, "Got exception " + e);
+                        e.printStackTrace();
                     }
                     break;
                 case GALLERY_PROOFS_REQUEST:
@@ -266,6 +264,62 @@ public class NewTicketActivity extends AppCompatActivity{
                     }
             }
         }
+    }
+
+    public String getRealPathFromURI(ContentResolver contentResolver, Uri uri, String whereClause) {
+        String ret = "";
+
+        // Query the uri with condition.
+        Cursor cursor = contentResolver.query(uri, null, whereClause, null, null);
+
+        if(cursor!=null)
+        {
+            boolean moveToFirst = cursor.moveToFirst();
+            if(moveToFirst)
+            {
+
+                // Get columns name by uri type.
+                String columnName = MediaStore.Images.Media.DATA;
+
+                if( uri==MediaStore.Images.Media.EXTERNAL_CONTENT_URI )
+                {
+                    columnName = MediaStore.Images.Media.DATA;
+                }else if( uri==MediaStore.Audio.Media.EXTERNAL_CONTENT_URI )
+                {
+                    columnName = MediaStore.Audio.Media.DATA;
+                }else if( uri==MediaStore.Video.Media.EXTERNAL_CONTENT_URI )
+                {
+                    columnName = MediaStore.Video.Media.DATA;
+                }
+
+                // Get column index.
+                int imageColumnIndex = cursor.getColumnIndex(columnName);
+
+                // Get column value which is the uri related file local path.
+                ret = cursor.getString(imageColumnIndex);
+            }
+        }
+
+        return ret;
+    }
+
+    private Bitmap getSelectedImage(Intent data, BitmapFactory.Options options) throws IOException {
+        Bitmap bitmap;
+        Uri selectedImage = data.getData();
+        if (isEmulator()) {
+            InputStream inputStream =
+                    getResources().openRawResource(R.raw.ticketphoto);
+
+            byte[] photoData = new byte[0];
+            photoData = IOUtils.toByteArray(inputStream);
+            inputStream.close();
+
+            bitmap = BitmapFactory.decodeByteArray(photoData, 0, photoData.length, options);
+        }else {
+            bitmap = MediaStore.Images.Media.getBitmap(
+                    getApplicationContext().getContentResolver(), selectedImage);
+        }
+        return bitmap;
     }
 
 
@@ -303,6 +357,7 @@ public class NewTicketActivity extends AppCompatActivity{
 
     private class GoogleVision extends AsyncTask<Void, Void, BatchAnnotateImagesResponse> {
         private static final String TAG = "GoogleVision";
+        private String errorMessage ;
 
         @Override
         protected BatchAnnotateImagesResponse doInBackground(Void... voids) {
@@ -335,6 +390,7 @@ public class NewTicketActivity extends AppCompatActivity{
                 return batchResponse;
             } catch (Exception e) {
                 Log.e(TAG, e.getMessage());
+                errorMessage = e.getMessage();
                 return null;
             }
 
@@ -356,7 +412,7 @@ public class NewTicketActivity extends AppCompatActivity{
             if (response == null || response.getResponses() == null) {
                 progressBar.setVisibility(View.GONE);
                 Toast.makeText(getApplicationContext(),
-                        context.getString(R.string.scanFailed),
+                        context.getString(R.string.scanFailed)  + errorMessage,
                         Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getApplicationContext(),

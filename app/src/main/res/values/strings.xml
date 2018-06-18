@@ -193,10 +193,10 @@ NOTICKET  מעניקה לך בזאת, ואתה מקבל, רישיון אישי, 
     <string name="ticketListMenuButton">רשימת דוחות</string>
     <string name="submitLeadSucess">ההודעה נשלחה.</string>
     <string name="server_client_id">39443762425-00jsddmngoc0t4rrbla2vgq16gkmn2hr.apps.googleusercontent.com</string>
-    <string name="scanReportButtonText">סרוק דו\"ח</string>
-    <string name="getGalleryImageButtonText">איתור דו\"ח</string>
+    <string name="scanReportButtonText">סרוק דו\"ח\n</string>
+    <string name="getGalleryImageButtonText">איתור דו\"ח\n</string>
     <string name="signitureAndIdNewTicketButtonText">ת.ז. + חתימה</string>
-    <string name="proofsNewTicketButonText">הוכחות</string>
+    <string name="proofsNewTicketButonText">הוכחות\n</string>
     <string name="appealFreeText">נימוקים לערעור</string>
     <string name="askForJusdgeHeaderText">בקשה להישפט</string>
     <string name="websiteGuide"><b>הנחיות לאתר</b></string>
