@@ -39,7 +39,7 @@ public class OptionsActivity extends MenuActivity {
         findViewById(R.id.askForJudgeButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),ContactLawyerActivity.class);
+                Intent intent = new Intent(v.getContext(),AskForJudgeActivity.class);
                 startActivity(intent);
             }
         });

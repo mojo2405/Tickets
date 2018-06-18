@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import il.co.myapp.tickets.activities.ContactLawyerActivity;
+import il.co.myapp.tickets.activities.ContactUsActivity;
 import il.co.myapp.tickets.activities.DashboardActivity;
 import il.co.myapp.tickets.activities.DisclaimerActivity;
 import il.co.myapp.tickets.activities.LoginActivity;
@@ -34,14 +35,9 @@ public class MenuActivity extends AppCompatActivity {
 
         switch (item.getItemId())
         {
-            case R.id.about_menu_item:
-                // Single menu item is selected do something
-                // Ex: launching new activity/screen or show alert message
-                Toast.makeText(this, "About is Selected", Toast.LENGTH_SHORT).show();
-                return true;
 
             case R.id.contact_us_menu_item:
-                intent = new Intent(this.getApplication(),ContactLawyerActivity.class);
+                intent = new Intent(this.getApplication(),ContactUsActivity.class);
                 startActivity(intent);
                 return true;
 

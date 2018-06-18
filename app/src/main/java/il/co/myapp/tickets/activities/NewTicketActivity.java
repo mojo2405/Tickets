@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -20,7 +19,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -60,18 +58,21 @@ import il.co.myapp.tickets.utils.TicketParser;
 public class NewTicketActivity extends AppCompatActivity{
 
     static final int REQUEST_TAKE_PHOTO = 1;
+    static final int GALLERY_REPORT_REQUEST = 2;
+    static final int GALLERY_ID_REQUEST = 3;
+    static final int GALLERY_PROOFS_REQUEST = 4;
+
     static final String GOOGLE_API_KEY = "AIzaSyB0a6pQ_pWETAOYm3v5ISJ-xrmE3ge766g";
     private static final String TAG = NewTicketActivity.class.getSimpleName();
     private Spinner driversSpinner;
     private Context context;
-    private FloatingActionButton addDriverButton, captureReportImage;
-    private RadioGroup cancelReasonRadioGroup;
-    private String selectedCancelReason;
     private List<String> detectedWordsFromTicket;
     ProgressBar progressBar;
-    private Button submitTicketButton;
+    private Button submitTicketButton, captureReportImage, getImageFromGallery, addIdButton,
+    addProofsButton;
     private String pathToPhotoFile;
     HashMap<String, EditText> ticketTextEditFields;
+
 
 
     @Override
@@ -83,6 +84,27 @@ public class NewTicketActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 dispatchTakePictureIntent();
+            }
+        });
+        getImageFromGallery = findViewById(R.id.newTicketGalleryButton);
+        getImageFromGallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getTicketFromGalley();
+            }
+        });
+        addIdButton = findViewById(R.id.newTicketIdButton);
+        addIdButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getIdFromGallery();
+            }
+        });
+        addProofsButton = findViewById(R.id.newTicketProofsButton);
+        addProofsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getProofsFromGallery();
             }
         });
         context = this;
@@ -113,12 +135,27 @@ public class NewTicketActivity extends AppCompatActivity{
             }
         });
 
-
-
-
-
         getTicketFieldsReferences();
 
+    }
+
+    private void getProofsFromGallery() {
+        Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+        photoPickerIntent.setType("image/*");
+        photoPickerIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        startActivityForResult(photoPickerIntent, GALLERY_PROOFS_REQUEST);
+    }
+
+    private void getIdFromGallery() {
+        Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+        photoPickerIntent.setType("image/*");
+        startActivityForResult(photoPickerIntent, GALLERY_ID_REQUEST);
+    }
+
+    private void getTicketFromGalley() {
+        Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+        photoPickerIntent.setType("image/*");
+        startActivityForResult(photoPickerIntent, GALLERY_REPORT_REQUEST);
     }
 
     private HashMap<String, String> GetTicketsDetailsValues() {
@@ -190,9 +227,43 @@ public class NewTicketActivity extends AppCompatActivity{
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_TAKE_PHOTO) {
-            if (resultCode == RESULT_OK) {
-                new GoogleVision().execute();
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case REQUEST_TAKE_PHOTO:
+                    new GoogleVision().execute();
+                    break;
+                case GALLERY_REPORT_REQUEST:
+                    Uri selectedImage = data.getData();
+                    try {
+                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(
+                                getApplicationContext().getContentResolver(), selectedImage);
+
+                    } catch (IOException e) {
+                        Log.i(TAG, "Got exception " + e);
+                    }
+                    break;
+                case GALLERY_ID_REQUEST:
+                    Uri selectedIdImage = data.getData();
+                    try {
+                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(
+                                getApplicationContext().getContentResolver(), selectedIdImage);
+
+                    } catch (IOException e) {
+                        Log.i(TAG, "Got exception " + e);
+                    }
+                    break;
+                case GALLERY_PROOFS_REQUEST:
+                    if(data.getClipData() != null) {
+                        int count = data.getClipData().getItemCount(); //evaluate the count before the for loop --- otherwise, the count is evaluated every loop.
+                        for(int i = 0; i < count; i++) {
+                            Uri imageUri = data.getClipData().getItemAt(i).getUri();
+                            //do something with the image (save it to some directory or whatever you need to do with it here)
+                        }
+
+                    } else if(data.getData() != null) {
+                        String imagePath = data.getData().getPath();
+                        //do something with the image (save it to some directory or whatever you need to do with it here)
+                    }
             }
         }
     }
