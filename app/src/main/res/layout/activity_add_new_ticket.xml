@@ -93,9 +93,10 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
-                    android:text="@string/signitureAndIdNewTicketButtonText"
                     android:background="@android:color/transparent"
-                    android:drawableBottom="@mipmap/ic_id_round" />
+                    android:drawableBottom="@mipmap/ic_id_round"
+                    android:text="@string/signitureAndIdNewTicketButtonText"
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/newTicketProofsButton"
