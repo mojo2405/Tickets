@@ -132,7 +132,7 @@ public class TrafficTicketData {
                     public void onErrorResponse(VolleyError error) {
                         String errorResponse = ParseNetworkError.GetErrorMessage(error);
                         Toast.makeText(getApplicationContext(),
-                                errorResponse, Toast.LENGTH_LONG).show();
+                                "Failed. "+ errorResponse, Toast.LENGTH_LONG).show();
 
                     }
                 })

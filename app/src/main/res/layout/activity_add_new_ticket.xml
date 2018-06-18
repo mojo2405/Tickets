@@ -632,7 +632,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginStart="5dp"
                     android:hint="@string/appealFreeText"
-                    android:tag="ticketFreeText"
+                    android:tag="apealReasonFreeText"
                     android:textSize="13sp" />
             </LinearLayout>
 

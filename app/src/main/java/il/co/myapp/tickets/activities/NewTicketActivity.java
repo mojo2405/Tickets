@@ -15,6 +15,7 @@ import android.provider.MediaStore;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +39,7 @@ import com.google.api.services.vision.v1.model.Image;
 import com.google.api.services.vision.v1.model.ImageContext;
 
 import org.apache.commons.io.output.ByteArrayOutputStream;
+import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.io.File;
@@ -74,6 +76,8 @@ public class NewTicketActivity extends AppCompatActivity{
     addProofsButton;
     private String pathToPhotoFile;
     HashMap<String, EditText> ticketTextEditFields;
+    String idBlob;
+    JSONArray proofsArray = new JSONArray();
 
 
 
@@ -163,6 +167,8 @@ public class NewTicketActivity extends AppCompatActivity{
     private HashMap<String, String> GetTicketsDetailsValues() {
         HashMap<String, String> tickets = new HashMap<>();
         tickets.put("email",AppController.getInstance().getUser().getEmail());
+        tickets.put("idBlobBase64",idBlob);
+        tickets.put("proofsArrayBase64",proofsArray.toString());
         for (String key : ticketTextEditFields.keySet()) {
             if (ticketTextEditFields.get(key).getText().length()==0)
                 tickets.put(key, null);
@@ -231,7 +237,7 @@ public class NewTicketActivity extends AppCompatActivity{
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             BitmapFactory.Options options = new BitmapFactory.Options();
-            Bitmap bitmap;
+
             options.inSampleSize = 2;
 
             switch (requestCode) {
@@ -245,7 +251,8 @@ public class NewTicketActivity extends AppCompatActivity{
                     break;
                 case GALLERY_ID_REQUEST:
                     try {
-                        bitmap = getSelectedImage(data, options);
+                        Bitmap bitmap = getSelectedImage(data.getData(), options);
+                        idBlob =  Base64.encodeToString(bitmapToBlob(bitmap), Base64.DEFAULT);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -255,15 +262,36 @@ public class NewTicketActivity extends AppCompatActivity{
                         int count = data.getClipData().getItemCount(); //evaluate the count before the for loop --- otherwise, the count is evaluated every loop.
                         for(int i = 0; i < count; i++) {
                             Uri imageUri = data.getClipData().getItemAt(i).getUri();
+                            try {
+                                Bitmap bitmap = getSelectedImage(imageUri, options);
+                                String blob =  Base64.encodeToString(bitmapToBlob(bitmap), Base64.DEFAULT);
+                                proofsArray.put(blob);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                             //do something with the image (save it to some directory or whatever you need to do with it here)
                         }
 
                     } else if(data.getData() != null) {
-                        String imagePath = data.getData().getPath();
+//                        String imagePath = data.getData().getPath();
+                        try {
+                            Bitmap bitmap = getSelectedImage(data.getData(), options);
+                            String blob =  Base64.encodeToString(bitmapToBlob(bitmap), Base64.DEFAULT);
+                            proofsArray.put(blob);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         //do something with the image (save it to some directory or whatever you need to do with it here)
                     }
             }
         }
+    }
+
+    private byte[] bitmapToBlob(Bitmap bitmap) {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 40, bos);
+        byte[] bArray = bos.toByteArray();
+        return bArray;
     }
 
     public String getRealPathFromURI(ContentResolver contentResolver, Uri uri, String whereClause) {
@@ -303,9 +331,8 @@ public class NewTicketActivity extends AppCompatActivity{
         return ret;
     }
 
-    private Bitmap getSelectedImage(Intent data, BitmapFactory.Options options) throws IOException {
+    private Bitmap getSelectedImage(Uri selectedImage, BitmapFactory.Options options) throws IOException {
         Bitmap bitmap;
-        Uri selectedImage = data.getData();
         if (isEmulator()) {
             InputStream inputStream =
                     getResources().openRawResource(R.raw.ticketphoto);
