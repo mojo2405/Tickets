@@ -220,4 +220,5 @@ NOTICKET  מעניקה לך בזאת, ואתה מקבל, רישיון אישי, 
     <string name="contactUsHeader">צרו קשר</string>
     <string name="officePhoneText">טלפון: 04-8744444</string>
     <string name="officeMailText">מייל: info@law.com</string>
+    <string name="readPermissionRequired">על מנת שנוכל לסרוק את התמונה מהגלריה - אנא אשר את ההרשאות לכך.</string>
 </resources>

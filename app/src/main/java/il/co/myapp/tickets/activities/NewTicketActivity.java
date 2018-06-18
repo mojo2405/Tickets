@@ -1,8 +1,10 @@
 package il.co.myapp.tickets.activities;
 
+import android.Manifest;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,6 +15,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
@@ -65,6 +69,8 @@ public class NewTicketActivity extends AppCompatActivity{
     static final int GALLERY_REPORT_REQUEST = 2;
     static final int GALLERY_ID_REQUEST = 3;
     static final int GALLERY_PROOFS_REQUEST = 4;
+
+    static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE=101;
 
     static final String GOOGLE_API_KEY = "AIzaSyB0a6pQ_pWETAOYm3v5ISJ-xrmE3ge766g";
     private static final String TAG = NewTicketActivity.class.getSimpleName();
@@ -152,6 +158,7 @@ public class NewTicketActivity extends AppCompatActivity{
         startActivityForResult(photoPickerIntent, GALLERY_PROOFS_REQUEST);
     }
 
+
     private void getIdFromGallery() {
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
@@ -159,9 +166,42 @@ public class NewTicketActivity extends AppCompatActivity{
     }
 
     private void getTicketFromGalley() {
+        if (ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+
+        }else {
+            getImageFromGalleryIntent(GALLERY_REPORT_REQUEST);
+        }
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    getImageFromGalleryIntent(GALLERY_REPORT_REQUEST);
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            context.getString(R.string.readPermissionRequired) ,
+                            Toast.LENGTH_LONG).show();
+                }
+                return;
+            }
+        }
+    }
+
+    private void getImageFromGalleryIntent(int galleryReportRequest) {
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
-        startActivityForResult(photoPickerIntent, GALLERY_REPORT_REQUEST);
+        startActivityForResult(photoPickerIntent, galleryReportRequest);
     }
 
     private HashMap<String, String> GetTicketsDetailsValues() {
