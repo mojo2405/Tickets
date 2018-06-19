@@ -69,13 +69,13 @@ public class User {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                if (null != loginCallBack) loginCallBack.LoginResponseReceived("Success");
+                if (null != loginCallBack) loginCallBack.LoginResponseReceived("Success", 200);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 String errorResponse = ParseNetworkError.GetErrorMessage(error);
-                if (null != loginCallBack) loginCallBack.LoginResponseReceived(errorResponse);
+                if (null != loginCallBack) loginCallBack.LoginResponseReceived(errorResponse, error.networkResponse.statusCode);
             }
         });
 

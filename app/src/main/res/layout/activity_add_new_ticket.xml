@@ -72,7 +72,7 @@
                     <TextView
                         android:id="@+id/scanReportText"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:gravity="center"
@@ -104,7 +104,7 @@
                 <TextView
                     android:id="@+id/reportFromGalleryText"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -119,40 +119,8 @@
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
                     android:src="@mipmap/ic_gallery" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical">
-
                 <TextView
-                    android:id="@+id/idFromGalleryText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/signitureAndIdNewTicketButtonText" />
-
-                <ImageButton
-                    android:id="@+id/newTicketIdButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:src="@mipmap/ic_id" />
-                <TextView
-                    android:id="@+id/idTotalText"
+                    android:id="@+id/galleryAttachedTotalText"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -163,6 +131,49 @@
                     android:textColor="@color/docsAttached"/>
 
             </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/idFromGalleryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/signitureAndIdNewTicketButtonText" />
+
+                    <ImageButton
+                        android:id="@+id/newTicketIdButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:src="@mipmap/ic_id" />
+
+                    <TextView
+                        android:id="@+id/idTotalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/idDocumentAttachedText"
+                        android:textColor="@color/docsAttached"
+                        android:visibility="gone" />
+
+                </LinearLayout>
 
 
             <LinearLayout
@@ -179,7 +190,7 @@
                 <TextView
                     android:id="@+id/proofsFromGalleryText"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center"

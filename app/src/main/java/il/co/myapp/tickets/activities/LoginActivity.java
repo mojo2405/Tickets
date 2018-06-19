@@ -13,9 +13,12 @@ import android.widget.Toast;
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInApi;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
@@ -23,6 +26,7 @@ import com.google.android.gms.tasks.Task;
 import org.json.JSONObject;
 
 import il.co.myapp.tickets.R;
+import il.co.myapp.tickets.activities.fragments.GoogleLoginFragment;
 import il.co.myapp.tickets.controller.AppController;
 import il.co.myapp.tickets.data.AsyncLoginResponse;
 import il.co.myapp.tickets.model.User;
@@ -157,13 +161,12 @@ public class LoginActivity extends FragmentActivity
     }
 
 
-
     public void loginSuccess (final User user) {
 
 
         user.preformRegister(this, new AsyncLoginResponse() {
             @Override
-            public void LoginResponseReceived(String response) {
+            public void LoginResponseReceived(String response, Integer status) {
                 if (response == "Success") {
 //                    progressBar.setVisibility(View.GONE);
                     AppController.getInstance().setUser(user);
@@ -180,8 +183,14 @@ public class LoginActivity extends FragmentActivity
 
                 } else {
 //                    progressBar.setVisibility(View.GONE);
-                    Toast.makeText(getApplicationContext(),
-                            response, Toast.LENGTH_LONG).show();
+                    if (status == 410) { // Means access token is invalid
+                        Log.d(TAG,"Need to ask for new access token");
+
+                    }else {
+                        Toast.makeText(getApplicationContext(),
+                                response, Toast.LENGTH_LONG).show();
+                    }
+
                 }
             }
         });
