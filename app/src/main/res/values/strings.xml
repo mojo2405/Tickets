@@ -219,7 +219,7 @@ NOTICKET  מעניקה לך בזאת, ואתה מקבל, רישיון אישי, 
     <string name="readPermissionRequired">על מנת שנוכל לסרוק את התמונה מהגלריה - אנא אשר את ההרשאות לכך.</string>
     <string name="idDocumentAttachedText">מסמך צורף.</string>
     <plurals name="proofsAttachedText">
-        <item quantity="one">מסמך 1 צורף.</item>
+        <item quantity="one">מסמך צורף.</item>
         <item quantity="other">%d מסמכים צורפו.</item>
     </plurals>
 </resources>

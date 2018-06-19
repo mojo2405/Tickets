@@ -87,7 +87,7 @@ public class NewTicketActivity extends MenuActivity{
     HashMap<String, EditText> ticketTextEditFields;
     String idBlob;
     JSONArray proofsArray = new JSONArray();
-
+    private String scanBlob;
 
 
     @Override
@@ -210,6 +210,7 @@ public class NewTicketActivity extends MenuActivity{
     private HashMap<String, String> GetTicketsDetailsValues() {
         HashMap<String, String> tickets = new HashMap<>();
         tickets.put("email",AppController.getInstance().getUser().getEmail());
+        tickets.put("scanBlobBase64",scanBlob);
         tickets.put("idBlobBase64",idBlob);
         tickets.put("proofsArrayBase64",proofsArray.toString());
         for (String key : ticketTextEditFields.keySet()) {
@@ -288,16 +289,23 @@ public class NewTicketActivity extends MenuActivity{
                     new GoogleVision().execute();
                     break;
                 case GALLERY_REPORT_REQUEST:
-                        pathToPhotoFile = getRealPathFromURI(getContentResolver(),data.getData(),null);
-                        new GoogleVision().execute();
-                        Log.v(TAG,"Got path " + pathToPhotoFile);
+                    try {
+                        Bitmap bitmap = getSelectedImage(data.getData(), options);
+                        scanBlob =  Base64.encodeToString(bitmapToBlob(bitmap), Base64.DEFAULT);
+                        findViewById(R.id.galleryAttachedTotalText).setVisibility(View.VISIBLE);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    // Scan Image from gallery
+//                        pathToPhotoFile = getRealPathFromURI(getContentResolver(),data.getData(),null);
+//                        new GoogleVision().execute();
+//                        Log.v(TAG,"Got path " + pathToPhotoFile);
                     break;
                 case GALLERY_ID_REQUEST:
                     try {
                         Bitmap bitmap = getSelectedImage(data.getData(), options);
                         idBlob =  Base64.encodeToString(bitmapToBlob(bitmap), Base64.DEFAULT);
                         findViewById(R.id.idTotalText).setVisibility(View.VISIBLE);
-//                        addIdButton
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
