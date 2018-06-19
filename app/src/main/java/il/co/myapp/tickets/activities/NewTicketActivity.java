@@ -24,9 +24,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.util.IOUtils;
@@ -78,8 +80,8 @@ public class NewTicketActivity extends AppCompatActivity{
     private Context context;
     private List<String> detectedWordsFromTicket;
     ProgressBar progressBar;
-    private Button submitTicketButton, captureReportImage, getImageFromGallery, addIdButton,
-    addProofsButton;
+    private Button submitTicketButton;
+    private ImageButton captureReportImage, getImageFromGallery, addIdButton, addProofsButton ;
     private String pathToPhotoFile;
     HashMap<String, EditText> ticketTextEditFields;
     String idBlob;
@@ -293,6 +295,8 @@ public class NewTicketActivity extends AppCompatActivity{
                     try {
                         Bitmap bitmap = getSelectedImage(data.getData(), options);
                         idBlob =  Base64.encodeToString(bitmapToBlob(bitmap), Base64.DEFAULT);
+                        findViewById(R.id.idTotalText).setVisibility(View.VISIBLE);
+//                        addIdButton
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -306,11 +310,15 @@ public class NewTicketActivity extends AppCompatActivity{
                                 Bitmap bitmap = getSelectedImage(imageUri, options);
                                 String blob =  Base64.encodeToString(bitmapToBlob(bitmap), Base64.DEFAULT);
                                 proofsArray.put(blob);
+
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
                             //do something with the image (save it to some directory or whatever you need to do with it here)
                         }
+                        TextView proofsText = findViewById(R.id.proofsTotalText);
+                        proofsText.setVisibility(View.VISIBLE);
+                        proofsText.setText(getResources().getQuantityString(R.plurals.proofsAttachedText,count,count));
 
                     } else if(data.getData() != null) {
 //                        String imagePath = data.getData().getPath();

@@ -55,62 +55,161 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
-                <Button
-                    android:id="@+id/newTicketCaptureReportId"
+
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginEnd="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:text="@string/scanReportButtonText"
-                    android:background="@android:color/transparent"
-                    android:drawableBottom="@mipmap/ic_scan_round" />
+                    android:orientation="vertical">
 
-                <Button
+
+                    <TextView
+                        android:id="@+id/scanReportText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/scanReportButtonText" />
+
+                    <ImageButton
+                        android:id="@+id/newTicketCaptureReportId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:src="@mipmap/ic_scan" />
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/reportFromGalleryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/getGalleryImageButtonText" />
+
+                <ImageButton
                     android:id="@+id/newTicketGalleryButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
                     android:layout_weight="1"
-                    android:text="@string/getGalleryImageButtonText"
                     android:background="@android:color/transparent"
-                    android:drawableBottom="@mipmap/ic_gallery_round" />
+                    android:src="@mipmap/ic_gallery" />
 
-                <Button
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/idFromGalleryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/signitureAndIdNewTicketButtonText" />
+
+                <ImageButton
                     android:id="@+id/newTicketIdButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
-                    android:drawableBottom="@mipmap/ic_id_round"
-                    android:text="@string/signitureAndIdNewTicketButtonText"
-                    android:textSize="12sp" />
+                    android:src="@mipmap/ic_id" />
+                <TextView
+                    android:id="@+id/idTotalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="@string/idDocumentAttachedText"
+                    android:textColor="@color/docsAttached"/>
 
-                <Button
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/proofsFromGalleryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/proofsNewTicketButonText" />
+
+                <ImageButton
                     android:id="@+id/newTicketProofsButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
                     android:layout_weight="1"
-                    android:text="@string/proofsNewTicketButonText"
                     android:background="@android:color/transparent"
-                    android:drawableBottom="@mipmap/ic_proofs_round" />
+                    android:src="@mipmap/ic_proofs" />
+
+                <TextView
+                    android:id="@+id/proofsTotalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:textColor="@color/docsAttached"/>
+
+
+            </LinearLayout>
+
+
+
 
 
 

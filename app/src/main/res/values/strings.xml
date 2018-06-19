@@ -200,17 +200,13 @@ NOTICKET  מעניקה לך בזאת, ואתה מקבל, רישיון אישי, 
     <string name="appealFreeText">נימוקים לערעור</string>
     <string name="askForJusdgeHeaderText">בקשה להישפט</string>
     <string name="websiteGuide"><b>הנחיות לאתר</b></string>
-    <string name="guidesText" >
-1.   טופס זה יש למלא ולשלוח באמצעות כפתור "שלח" המופיע בתחתית הטופס.\n
-2.   בקשה להישפט יש לשלוח תוך 90 ימים מיום קבלת הדו"ח באמצעות הספח שמוצמד לדו"ח. זולת, באם הדו"ח לא ברשותך.\n
-3.   ההוכחה למשלוח הפנייה באמצעות טופס הפנייה ומספר הסימוכין של הטופס.\n
-4.   מענה או הזמנה להישפט יישלח לכתובת שהנך מציין על גבי טופס זה.\n
-5.   על מקבל הדו"ח בלבד למלא את הבקשה.\n
-6.   בפנייתך הנך מתבקש לצרף :\n
-        • צילום דו"ח\n
-        • צילום ת.ז. + חתימה\n
-    </string>
-    <string name="linkToPoliceWebsiteText">קישור לאתר:\n https://forms.gov.il/globaldata/getsequence/gethtmlform.aspx?formType=driverapply@police.gov.il</string>
+    <string name="guidesText1">1.   טופס זה יש למלא ולשלוח באמצעות כפתור "שלח" המופיע בתחתית הטופס. </string>
+    <string name="guidesText2">2.   בקשה להישפט יש לשלוח תוך 90 ימים מיום קבלת הדו"ח באמצעות הספח שמוצמד לדו"ח. זולת, באם הדו"ח לא ברשותך.</string>
+    <string name="guidesText3">3.   ההוכחה למשלוח הפנייה באמצעות טופס הפנייה ומספר הסימוכין של הטופס.</string>
+    <string name="guidesText4">4.   מענה או הזמנה להישפט יישלח לכתובת שהנך מציין על גבי טופס זה.</string>
+    <string name="guidesText5">5.   על מקבל הדו"ח בלבד למלא את הבקשה.</string>
+    <string name="guidesText6">6.   בפנייתך הנך מתבקש לצרף:\n\t* צילום דו"ח\n\t* צילום ת.ז. + חתימה</string>
+    <string name="linkToPoliceWebsiteText">קישור לאתר:\n <a href="https://forms.gov.il/globaldata/getsequence/gethtmlform.aspx?formType=driverapply@police.gov.il">https://forms.gov.il/globaldata/getsequence/gethtmlform.aspx?formType=driverapply@police.gov.il</a></string>
     <string name="askForJudgeTeaserText">מדוע כדאי לעיתים להגיש בקשה להישפט? נגד א\' תושב המרכז הוגש כתב אישום לפיו <b>עבר באור אדום 5 שניות ויותר לאחר שהאור הפך לאדום.</b> בגין עבירה זו היה צפוי ל<b>פסילה של מספר חודשים,</b> פסילה על תנאי וקנס כספי של אלפי שקלים, בגלל הסיכון הממשי הכרוך בחציית צומת באור אדום 5 שניות ויותר מאז שהתחלף לאדום.\n
         יתר על כן, כתב האישום אפילו נפתח בבית המשפט לתעבורה אך א\' טרם זומן לדיון בעניינו.\n
         לאחר שא\' זומן לבית המשפט, בדיון ההקראה הראשון <b>עורך דין לתעבורה ממשרד עורכי דין ידוע </b>העלה טענת התיישנות לפיו כתב האישום צריך להתבטל מחמת התיישנות<b>. לצורך בדיקת הטענה, הדיון נדחה למועד אחר, ובמועד הנדחה המאשימה חזרה בה מכתב האישום, וא\' ניצל מפסילה ארוכה, קנס כספי משמעותי ו-10 נקודות במשרד הרישוי</b>.\n
@@ -221,4 +217,9 @@ NOTICKET  מעניקה לך בזאת, ואתה מקבל, רישיון אישי, 
     <string name="officePhoneText">טלפון: 04-8744444</string>
     <string name="officeMailText">מייל: info@law.com</string>
     <string name="readPermissionRequired">על מנת שנוכל לסרוק את התמונה מהגלריה - אנא אשר את ההרשאות לכך.</string>
+    <string name="idDocumentAttachedText">מסמך צורף.</string>
+    <plurals name="proofsAttachedText">
+        <item quantity="one">מסמך 1 צורף.</item>
+        <item quantity="other">%d מסמכים צורפו.</item>
+    </plurals>
 </resources>

@@ -48,14 +48,70 @@
                 android:text="@string/websiteGuide" />
 
             <TextView
-                android:id="@+id/guidesText"
-                android:layout_width="match_parent"
+                android:id="@+id/guidesText1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:text="@string/guidesText" />
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text="@string/guidesText1" />
+
+            <TextView
+                android:id="@+id/guidesText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text="@string/guidesText2" />
+
+            <TextView
+                android:id="@+id/guidesText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text="@string/guidesText3" />
+
+            <TextView
+                android:id="@+id/guidesText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text="@string/guidesText4" />
+
+            <TextView
+                android:id="@+id/guidesText5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text="@string/guidesText5" />
+
+            <TextView
+                android:id="@+id/guidesText6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text="@string/guidesText6" />
 
             <TextView
                 android:id="@+id/linkToPoliceWebsite"
@@ -67,12 +123,14 @@
                 android:paddingRight="16dp"
                 android:text="@string/linkToPoliceWebsiteText"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:autoLink="web"
                 app:layout_constraintTop_toBottomOf="@+id/guidesText" />
 
             <TextView
                 android:id="@+id/askForJudgeTeaser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
                 android:paddingLeft="16dp"
