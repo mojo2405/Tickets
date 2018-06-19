@@ -60,21 +60,18 @@ public class LoginActivity extends FragmentActivity
     public void onStart() {
         super.onStart();
 
-        // Check if signed in in Facebook
-        final AccessToken accessToken = AccessToken.getCurrentAccessToken();
-        boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
-        if (isLoggedIn) {
-            Log.v(TAG,"FACEBOOK TOKEN IS " + accessToken.getToken());
-            getFacebookDetails(accessToken);
-
-        }
-
-
-
         // Check if signed in in Google
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 
+        // Check if signed in in Facebook
+        final AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        boolean isFacebookLoggedIn = accessToken != null && !accessToken.isExpired();
 
+        if (isFacebookLoggedIn) {
+            Log.v(TAG,"FACEBOOK TOKEN IS " + accessToken.getToken());
+            getFacebookDetails(accessToken);
+            return;
+        }
 
         if (account == null) {
 

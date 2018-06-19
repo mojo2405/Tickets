@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.facebook.AccessToken;
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -70,20 +71,27 @@ public class GoogleLoginFragment extends Fragment {
                 .build();
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
-        mGoogleSignInClient.silentSignIn().addOnCompleteListener(getActivity(), new OnCompleteListener<GoogleSignInAccount>() {
-            @Override
-            public void onComplete(@NonNull Task<GoogleSignInAccount> task) {
-                if (task.isSuccessful()) {
-                    // The signed in account is stored in the task's result.
-                    GoogleSignInAccount signedInAccount = task.getResult();
-                    user.setAccessToken(signedInAccount.getIdToken());
-                    Log.d(TAG, "Got new access token " + signedInAccount.getIdToken());
-                } else {
-                    Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-                    startActivityForResult(signInIntent, RC_SIGN_IN);
+
+        // Check if signed in in Facebook
+        final AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        boolean isFacebookLoggedIn = accessToken != null && !accessToken.isExpired();
+
+        if (!isFacebookLoggedIn && GoogleSignIn.getLastSignedInAccount(getActivity()) != null) {
+            mGoogleSignInClient.silentSignIn().addOnCompleteListener(getActivity(), new OnCompleteListener<GoogleSignInAccount>() {
+                @Override
+                public void onComplete(@NonNull Task<GoogleSignInAccount> task) {
+                    if (task.isSuccessful()) {
+                        // The signed in account is stored in the task's result.
+                        GoogleSignInAccount signedInAccount = task.getResult();
+                        user.setAccessToken(signedInAccount.getIdToken());
+                        Log.d(TAG, "Got new access token " + signedInAccount.getIdToken());
+                    } else {
+                        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+                        startActivityForResult(signInIntent, RC_SIGN_IN);
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
 
