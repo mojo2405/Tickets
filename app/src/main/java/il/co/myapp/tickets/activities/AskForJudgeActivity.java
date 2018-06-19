@@ -5,8 +5,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import il.co.myapp.tickets.R;
+import il.co.myapp.tickets.menu.MenuActivity;
 
-public class AskForJudgeActivity extends AppCompatActivity {
+public class AskForJudgeActivity extends MenuActivity {
 
     private static final String TAG = AskForJudgeActivity.class.getSimpleName();
 

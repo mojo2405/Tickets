@@ -62,10 +62,11 @@ import il.co.myapp.tickets.R;
 import il.co.myapp.tickets.controller.AppController;
 import il.co.myapp.tickets.data.AsyncTicketResponse;
 import il.co.myapp.tickets.data.TrafficTicketData;
+import il.co.myapp.tickets.menu.MenuActivity;
 import il.co.myapp.tickets.model.Ticket;
 import il.co.myapp.tickets.utils.TicketParser;
 
-public class NewTicketActivity extends AppCompatActivity{
+public class NewTicketActivity extends MenuActivity{
 
     static final int REQUEST_TAKE_PHOTO = 1;
     static final int GALLERY_REPORT_REQUEST = 2;

@@ -11,9 +11,10 @@ import android.widget.Toast;
 
 import il.co.myapp.tickets.R;
 import il.co.myapp.tickets.data.AsyncLeadResponse;
+import il.co.myapp.tickets.menu.MenuActivity;
 import il.co.myapp.tickets.model.Lead;
 
-public class ContactUsActivity extends AppCompatActivity {
+public class ContactUsActivity extends MenuActivity {
 
     private static final String TAG = ContactUsActivity.class.getSimpleName();
     private Button submitLeadButton;

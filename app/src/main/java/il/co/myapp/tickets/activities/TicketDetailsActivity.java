@@ -6,9 +6,10 @@ import android.widget.EditText;
 
 import il.co.myapp.tickets.R;
 import il.co.myapp.tickets.controller.AppController;
+import il.co.myapp.tickets.menu.MenuActivity;
 import il.co.myapp.tickets.model.Ticket;
 
-public class TicketDetailsActivity extends AppCompatActivity {
+public class TicketDetailsActivity extends MenuActivity {
 
     private EditText driversName;
     private EditText carsNumber;

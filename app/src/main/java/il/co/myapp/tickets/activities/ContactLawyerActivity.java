@@ -19,10 +19,11 @@ import il.co.myapp.tickets.R;
 import il.co.myapp.tickets.data.AsyncLeadResponse;
 import il.co.myapp.tickets.data.AsyncTicketResponse;
 import il.co.myapp.tickets.data.TrafficTicketData;
+import il.co.myapp.tickets.menu.MenuActivity;
 import il.co.myapp.tickets.model.Lead;
 import il.co.myapp.tickets.model.Ticket;
 
-public class ContactLawyerActivity extends AppCompatActivity {
+public class ContactLawyerActivity extends MenuActivity {
 
     private static final String TAG = ContactLawyerActivity.class.getSimpleName();
 
