@@ -1,5 +1,7 @@
 package il.co.myapp.tickets.controller;
 
+import java.util.HashMap;
+
 import il.co.myapp.tickets.model.Ticket;
 import il.co.myapp.tickets.model.User;
 
@@ -12,7 +14,8 @@ public class AppController {
     private User user;
     private String token;
     private Ticket _viewableTicket;
-    
+    private HashMap<String, String> ticketFields;
+
 
     public static AppController getInstance() {
         if(null == ourInstance){
@@ -43,5 +46,11 @@ public class AppController {
     }
 
 
+    public void setTicketFields(HashMap<String, String> ticketFields) {
+        this.ticketFields = ticketFields;
+    }
 
+    public HashMap<String, String> getTicketFields() {
+        return ticketFields;
+    }
 }

@@ -13,6 +13,7 @@ import il.co.myapp.tickets.activities.DashboardActivity;
 import il.co.myapp.tickets.activities.DisclaimerActivity;
 import il.co.myapp.tickets.activities.LoginActivity;
 import il.co.myapp.tickets.R;
+import il.co.myapp.tickets.activities.QAActivity;
 import il.co.myapp.tickets.activities.TicketDetailsActivity;
 import il.co.myapp.tickets.controller.AppController;
 
@@ -42,7 +43,8 @@ public class MenuActivity extends AppCompatActivity {
                 return true;
 
             case R.id.qa_menu_item:
-                Toast.makeText(this, "QA is Selected", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this.getApplication(),QAActivity.class);
+                startActivity(intent);
                 return true;
 
             case R.id.disclaimer_menu_item:

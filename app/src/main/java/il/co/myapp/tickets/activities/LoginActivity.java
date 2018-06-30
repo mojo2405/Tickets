@@ -168,7 +168,7 @@ public class LoginActivity extends FragmentActivity
 //                    progressBar.setVisibility(View.GONE);
                     AppController.getInstance().setUser(user);
                     if ( null == nextScreen ) {
-                        startActivity(new Intent(LoginActivity.this, NewTicketActivity.class));
+                        startActivity(new Intent(LoginActivity.this, NewTicketOptionsActivity.class));
                     }else {
                         try {
                             Class<?> c = Class.forName(nextScreen);

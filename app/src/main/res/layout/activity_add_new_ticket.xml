@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -42,192 +43,6 @@
             android:layout_height="wrap_content"
             >
 
-            <LinearLayout
-                android:id="@+id/newTicketActionRow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal"
-                android:baselineAligned="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:id="@+id/scanReportText"
-                        android:layout_width="match_parent"
-                        android:layout_height="36dp"
-                        android:layout_gravity="center"
-                        android:gravity="top|center"
-                        android:text="@string/scanReportButtonText" />
-
-                    <ImageButton
-                        android:id="@+id/newTicketCaptureReportId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:background="@android:color/transparent"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:src="@mipmap/ic_scan_round" />
-
-                </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/reportFromGalleryText"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:layout_gravity="center"
-                    android:gravity="top|center"
-                    android:text="@string/getGalleryImageButtonText" />
-
-                <ImageButton
-                    android:id="@+id/newTicketGalleryButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@android:color/transparent"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:src="@mipmap/ic_gallery_round" />
-
-                <TextView
-                    android:id="@+id/galleryAttachedTotalText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="@string/idDocumentAttachedText"
-                    android:textColor="@color/docsAttached"
-                    android:visibility="gone" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/idFromGalleryText"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:layout_gravity="center"
-                    android:gravity="top|center"
-                    android:text="@string/signitureAndIdNewTicketButtonText" />
-
-                <ImageButton
-                    android:id="@+id/newTicketIdButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@android:color/transparent"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:src="@mipmap/ic_id_round" />
-
-                <TextView
-                    android:id="@+id/idTotalText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="@string/idDocumentAttachedText"
-                    android:textColor="@color/docsAttached"
-                    android:visibility="gone" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/proofsFromGalleryText"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:layout_gravity="center"
-                    android:gravity="top|center"
-
-                    android:text="@string/proofsNewTicketButonText" />
-
-                <ImageButton
-                    android:id="@+id/newTicketProofsButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@android:color/transparent"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:src="@mipmap/ic_proofs_round" />
-
-                <TextView
-                    android:id="@+id/proofsTotalText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textColor="@color/docsAttached"
-                    android:visibility="gone" />
-
-
-            </LinearLayout>
-
-
-
-
-
-
-
-
-            </LinearLayout>
-
-
-
-
-
 
             <ProgressBar
                 android:id="@+id/newTicketProgressBar"
@@ -254,14 +69,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/newTicketActionRow"
                 android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newTicketActionRow">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
                     android:id="@+id/newTicketDriverNameId"
@@ -269,9 +82,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/newTicketDriverName"
+                    android:inputType="text"
                     android:tag="DriverName"
-                    android:textSize="13sp"
-                    android:inputType="text" />
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketTicketNumberId"
@@ -281,9 +94,9 @@
                     android:layout_marginStart="5dp"
                     android:layout_weight="1"
                     android:hint="@string/newTicketPenaltyNumber"
+                    android:inputType="text"
                     android:tag="PenaltyNumber"
-                    android:textSize="13sp"
-                    android:inputType="text"/>
+                    android:textSize="13sp" />
 
                 <EditText
                     android:id="@+id/newTicketTicketPrintDateId"
@@ -293,9 +106,9 @@
                     android:layout_marginStart="5dp"
                     android:layout_weight="1"
                     android:hint="@string/newTicketPrintingDate"
+                    android:inputType="text"
                     android:tag="PrintingDate"
-                    android:textSize="13sp"
-                    android:inputType="text"/>
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -744,21 +557,19 @@
             </LinearLayout>
 
             <Button
-            android:id="@+id/newTicketsubmitTicket"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/newTicketDetailsFreeTextRow"
-            android:text="@string/newTicketSubmit"
-                android:theme="@style/AppTheme.BlueButton"
+                android:id="@+id/newTicketNextPhaseTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newTicketDetailsFreeTextRow"
                 android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal"
+                android:text="@string/newTicketNextPhase"
+                android:theme="@style/AppTheme.BlueButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsFreeTextRow"/>
+                app:layout_constraintTop_toBottomOf="@+id/newTicketDetailsFreeTextRow" />
 
 
         </android.support.constraint.ConstraintLayout>
