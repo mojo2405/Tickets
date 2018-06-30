@@ -35,7 +35,10 @@ public class Ticket {
     }
 
     public String getDescription() {
-        return " תאריך פניה: " + parsedDate + " סטוס טיפול: " + officeStatus + " ";
+        return " תאריך פניה: " + parsedDate + "\n" +
+                " סטוס טיפול: " + officeStatus + "\n" +
+                 " מספר דוח תנועה: " + ticketNumber + "\n" +
+                " מספר רכב: " + carNumber ;
     }
 
     public String getTicketNumber() {
