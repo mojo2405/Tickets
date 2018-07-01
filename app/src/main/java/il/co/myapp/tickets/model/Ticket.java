@@ -1,10 +1,20 @@
 package il.co.myapp.tickets.model;
 
+import android.util.Log;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
+import il.co.myapp.tickets.activities.NewTicketActivity;
 
 public class Ticket {
 
-    private String parsedDate;
+    private static final String TAG = Ticket.class.getSimpleName();
+
+    private String ticketDate;
+    private String ticketCreatedDate;
     private String parsedTime;
     private String ticketDay;
     private String driverName;
@@ -35,7 +45,7 @@ public class Ticket {
     }
 
     public String getDescription() {
-        return " תאריך פניה: " + parsedDate + "\n" +
+        return " תאריך פניה: " + ticketCreatedDate + "\n" +
                 " סטוס טיפול: " + officeStatus + "\n" +
                  " מספר דוח תנועה: " + ticketNumber + "\n" +
                 " מספר רכב: " + carNumber ;
@@ -46,7 +56,7 @@ public class Ticket {
     }
 
     public String getTicketDate() {
-        return parsedDate;
+        return ticketDate;
     }
 
     public String getTicketTime() {
@@ -82,7 +92,10 @@ public class Ticket {
         return _requestHistory;
     }
 
-    public Ticket(String driverName, String carNumber, String ticketNumber, String ticketDate, String ticketDay, String felonyClause, String points, String driverRequest, String officeStatus, String details, List<RequestHistory> _requestHistory) {
+    public Ticket(String driverName, String carNumber, String ticketNumber, String ticketDate,
+                  String ticketDay, String felonyClause, String points, String driverRequest,
+                  String officeStatus, String details, List<RequestHistory> _requestHistory,
+                  String ticketCreatedDate) {
         this.ticketNumber = ticketNumber;
         this.carNumber = carNumber;
         this.driverName = driverName;
@@ -92,15 +105,37 @@ public class Ticket {
         this.officeStatus = officeStatus;
         this.details = details;
         this.ticketDay = ticketDay;
+
+        this.ticketCreatedDate = convertFormat(ticketCreatedDate);
+
         this._requestHistory = _requestHistory;
         try {
-            parsedDate = ticketDate.split(" ")[0];
+            this.ticketDate = ticketDate.split(" ")[0];
             parsedTime = ticketDate.split(" ")[1];
+
         }
         catch (Exception e){
-            parsedDate = "";
+            this.ticketDate = "";
             parsedTime ="";
         }
+
+
+    }
+
+    public static String convertFormat(String inputDate) {
+        SimpleDateFormat df1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat df2 = new SimpleDateFormat("dd-MM-yyyy");
+        try{
+            inputDate = inputDate.replace('T', ' ');
+            inputDate = inputDate.replace(".000Z", "");
+
+            Date d = df1.parse(inputDate);
+            return df2.format(d);
+        }catch(Exception e){
+            e.printStackTrace();
+            Log.e(TAG,e.getMessage());
+        }
+        return "";
     }
 
 }
