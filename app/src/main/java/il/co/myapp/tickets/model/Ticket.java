@@ -5,7 +5,10 @@ import android.util.Log;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import il.co.myapp.tickets.activities.NewTicketActivity;
 
@@ -96,6 +99,9 @@ public class Ticket {
                   String ticketDay, String felonyClause, String points, String driverRequest,
                   String officeStatus, String details, List<RequestHistory> _requestHistory,
                   String ticketCreatedDate) {
+
+        HashMap<String,String> map;
+
         this.ticketNumber = ticketNumber;
         this.carNumber = carNumber;
         this.driverName = driverName;
@@ -109,17 +115,35 @@ public class Ticket {
         this.ticketCreatedDate = convertFormat(ticketCreatedDate);
 
         this._requestHistory = _requestHistory;
-        try {
-            this.ticketDate = ticketDate.split(" ")[0];
-            parsedTime = ticketDate.split(" ")[1];
 
+        map = getDateAndTime(ticketDate);
+        this.ticketDate = map.get("Date");
+        this.parsedTime = map.get("Time");
+
+
+    }
+
+    public static HashMap<String,String> getDateAndTime(String inputDate) {
+        HashMap<String,String> map = new HashMap<>();
+        map.put("Date","");
+        map.put("Time","");
+
+        Log.v(TAG,"Got time input " + inputDate);
+        Pattern datePattern = Pattern.compile("(\\w+[\\.\\-\\/]\\w+[\\.\\-\\/]\\w+)");
+        Pattern timePattern = Pattern.compile("(\\d+:\\d+[:\\d]+)");
+
+        Matcher dateMatcher = datePattern.matcher(inputDate);
+        if (dateMatcher.find()){
+            map.put("Date",dateMatcher.group(1));
         }
-        catch (Exception e){
-            this.ticketDate = "";
-            parsedTime ="";
+
+        Matcher timeMatcher = timePattern.matcher(inputDate);
+        if (timeMatcher.find()){
+            map.put("Time",timeMatcher.group(1));
         }
 
 
+        return map;
     }
 
     public static String convertFormat(String inputDate) {
