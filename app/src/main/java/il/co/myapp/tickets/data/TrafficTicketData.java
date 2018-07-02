@@ -57,7 +57,8 @@ public class TrafficTicketData {
                                 ticketObject.get("OfficeStatus").toString(),
                                 ticketObject.get("PenaltyNotes").toString(),
                                 null,
-                                ticketObject.get("createdAt").toString()
+                                ticketObject.get("createdAt").toString(),
+                                ticketObject.get("PenaltyLocation").toString()
                                 ));
 
                     } catch (JSONException e) {
@@ -120,7 +121,8 @@ public class TrafficTicketData {
                                         ticketObject.get("OfficeStatus").toString(),
                                         ticketObject.get("PenaltyNotes").toString(),
                                         null,
-                                        ticketObject.get("createdAt").toString()
+                                        ticketObject.get("createdAt").toString(),
+                                        ticketObject.get("PenaltyLocation").toString()
                                 ));
                             } catch (JSONException e) {
                                 Log.e(TAG, e.getMessage());

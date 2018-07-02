@@ -58,6 +58,7 @@ public class TicketDetailsActivity extends MenuActivity {
             ticketDriversDetails.setText(ticket.getDetails());
             ticketDayOfWeek.setText(ticket.getTicketDay());
             ticketHour.setText(ticket.getTicketTime());
+            ticketPlace.setText(ticket.getTicketPlace());
         }
     }
 }

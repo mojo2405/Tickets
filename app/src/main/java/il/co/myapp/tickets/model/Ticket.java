@@ -28,6 +28,7 @@ public class Ticket {
     private String officeStatus;
     private String carNumber;
     private String details;
+    private String ticketPlace;
 
     public void setDriverRequest(String driverRequest) {
         this.driverRequest = driverRequest;
@@ -95,10 +96,19 @@ public class Ticket {
         return _requestHistory;
     }
 
+    public String getTicketPlace() {
+        return ticketPlace;
+    }
+
+    public void setTicketPlace(String ticketPlace) {
+        this.ticketPlace = ticketPlace;
+    }
+
+
     public Ticket(String driverName, String carNumber, String ticketNumber, String ticketDate,
                   String ticketDay, String felonyClause, String points, String driverRequest,
                   String officeStatus, String details, List<RequestHistory> _requestHistory,
-                  String ticketCreatedDate) {
+                  String ticketCreatedDate, String ticketPlace) {
 
         HashMap<String,String> map;
 
@@ -111,6 +121,7 @@ public class Ticket {
         this.officeStatus = officeStatus;
         this.details = details;
         this.ticketDay = ticketDay;
+        this.ticketPlace = ticketPlace;
 
         this.ticketCreatedDate = convertFormat(ticketCreatedDate);
 
@@ -161,5 +172,6 @@ public class Ticket {
         }
         return "";
     }
+
 
 }
