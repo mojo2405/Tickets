@@ -6,307 +6,269 @@
     android:layout_height="match_parent"
     tools:context=".activities.TicketDetailsActivity">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="368dp"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:text="פרטי הדוח"
+        android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-            <RelativeLayout
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layoutDirection="rtl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/ticketDetailsFirstLineId"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layoutDirection="rtl"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:id="@+id/ticketDetailsTitleId"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
-                        android:layout_marginTop="10dp"
-                        android:text="פרטי הדוח"
-                        android:textSize="30dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ticketDetailsFirstLineId"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/ticketDetailsDriverLabelId"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/ticketDetailsTitleId">
+                    android:layout_margin="10dp"
+                    android:text="@string/ticketDetailsDriversName" />
 
-                    <TextView
-                        android:id="@+id/ticketDetailsDriverLabelId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="@string/ticketDetailsDriversName" />
-
-                    <EditText
-                        android:id="@+id/ticketDetailsDriverNameId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingBottom="15dp" />
-
-                    <TextView
-                        android:id="@+id/ticketDetailsCarNumberLabelId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="@string/ticketDetailsCarsNumber" />
-
-                    <EditText
-                        android:id="@+id/ticketDetailsCarNumberId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingBottom="15dp" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ticketDetailsSecondLineId"
-                    android:layout_width="match_parent"
+                <EditText
+                    android:id="@+id/ticketDetailsDriverNameId"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/ticketDetailsFirstLineId">
+                    android:focusable="false"
+                    android:paddingBottom="15dp" />
 
-                    <TextView
-                        android:id="@+id/ticketDetailsCarTicketNumberLabelId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="@string/ticketDetailsTicketNumber" />
-
-                    <EditText
-                        android:id="@+id/ticketDetailsTicketNumberId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingBottom="15dp" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ticketDetailsThirdLineId"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/ticketDetailsCarNumberLabelId"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/ticketDetailsSecondLineId">
+                    android:layout_margin="10dp"
+                    android:text="@string/ticketDetailsCarsNumber" />
 
-                    <TextView
-                        android:id="@+id/ticketDetailsCarTicketDateLabelId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="@string/ticketDetailsTicketDate" />
-
-                    <EditText
-                        android:id="@+id/ticketDetailsCarTicketDateId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingBottom="15dp" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ticketDetailsFourthLineId"
-                    android:layout_width="match_parent"
+                <EditText
+                    android:id="@+id/ticketDetailsCarNumberId"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/ticketDetailsThirdLineId">
-
-                    <TextView
-                        android:id="@+id/ticketDetailsCarTicketDayLabelId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="@string/ticketDetailsDayOfWeek" />
-
-                    <EditText
-                        android:id="@+id/ticketDetailsCarTicketDayId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingBottom="15dp" />
-
-                    <TextView
-                        android:id="@+id/ticketDetailsCarTicketHourLabelId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="@string/ticketDetailsHour" />
-
-                    <EditText
-                        android:id="@+id/ticketDetailsCarTicketHourId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingBottom="15dp" />
+                    android:focusable="false"
+                    android:paddingBottom="15dp" />
 
 
-                </LinearLayout>
+            </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/ticketDetailsFifthLineId"
-                    android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/ticketDetailsSecondLineId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ticketDetailsFirstLineId">
+
+                <TextView
+                    android:id="@+id/ticketDetailsCarTicketNumberLabelId"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/ticketDetailsFourthLineId"
-                    android:orientation="horizontal">
+                    android:layout_margin="10dp"
+                    android:text="@string/ticketDetailsTicketNumber" />
 
-                    <TextView
-                        android:id="@+id/ticketDetailsCarTicketPlaceLabelId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="@string/ticketDetailsPlace" />
-
-                    <EditText
-                        android:id="@+id/ticketDetailsCarTicketPlaceId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingBottom="15dp" />
-
-                    <TextView
-                        android:id="@+id/ticketDetailsCarTicketClauseLabelId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="@string/ticketDetailsFelonyClause" />
-
-                    <EditText
-                        android:id="@+id/ticketDetailsCarTicketClauseId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingBottom="15dp" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ticketDetailsSixthLineId"
-                    android:layout_width="match_parent"
+                <EditText
+                    android:id="@+id/ticketDetailsTicketNumberId"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/ticketDetailsFifthLineId"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/ticketDetailsCarTicketPointsLabelId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="@string/ticketDetailsPoints" />
-
-                    <EditText
-                        android:id="@+id/ticketDetailsCarTicketPointsId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingBottom="15dp" />
+                    android:focusable="false"
+                    android:paddingBottom="15dp" />
 
 
-                </LinearLayout>
+            </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/ticketDetailsSeventhLineId"
-                    android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/ticketDetailsThirdLineId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ticketDetailsSecondLineId">
+
+                <TextView
+                    android:id="@+id/ticketDetailsCarTicketDateLabelId"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/ticketDetailsSixthLineId"
-                    android:orientation="horizontal">
+                    android:layout_margin="10dp"
+                    android:text="@string/ticketDetailsTicketDate" />
 
-                    <TextView
-                        android:id="@+id/ticketDetailsCarTicketDriversRequestLabelId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="@string/ticketDetailsDriversRequest" />
-
-                    <EditText
-                        android:id="@+id/ticketDetailsCarTicketDriversRequestId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingBottom="15dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ticketDetailsEightLineId"
-                    android:layout_width="match_parent"
+                <EditText
+                    android:id="@+id/ticketDetailsCarTicketDateId"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/ticketDetailsSeventhLineId"
-                    android:orientation="horizontal">
+                    android:focusable="false"
+                    android:paddingBottom="15dp" />
 
 
-                    <TextView
-                        android:id="@+id/ticketDetailsOfficeStatusLabelId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="@string/ticketDetailsOfficeStatus" />
+            </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/ticketDetailsOfficeStatusId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingBottom="15dp" />
+            <LinearLayout
+                android:id="@+id/ticketDetailsFourthLineId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ticketDetailsThirdLineId">
 
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ticketDetailsNinthLineId"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/ticketDetailsCarTicketDayLabelId"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/ticketDetailsEightLineId"
-                    android:orientation="horizontal">
+                    android:layout_margin="10dp"
+                    android:text="@string/ticketDetailsDayOfWeek" />
 
-                    <TextView
-                        android:id="@+id/ticketDetailsDetailsLabelId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="@string/ticketDetailsDetials" />
+                <EditText
+                    android:id="@+id/ticketDetailsCarTicketDayId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:paddingBottom="15dp" />
 
-                    <EditText
-                        android:id="@+id/ticketDetailsDetailsId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingBottom="15dp" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/ticketDetailsCarTicketHourLabelId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/ticketDetailsHour" />
 
-            </RelativeLayout>
-        </ScrollView>
-    </android.support.v7.widget.CardView>
+                <EditText
+                    android:id="@+id/ticketDetailsCarTicketHourId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:paddingBottom="15dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ticketDetailsFifthLineId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ticketDetailsFourthLineId"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ticketDetailsCarTicketPlaceLabelId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/ticketDetailsPlace" />
+
+                <EditText
+                    android:id="@+id/ticketDetailsCarTicketPlaceId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:paddingBottom="15dp" />
+
+                <TextView
+                    android:id="@+id/ticketDetailsCarTicketClauseLabelId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/ticketDetailsFelonyClause" />
+
+                <EditText
+                    android:id="@+id/ticketDetailsCarTicketClauseId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:paddingBottom="15dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ticketDetailsSixthLineId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ticketDetailsFifthLineId"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ticketDetailsCarTicketPointsLabelId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/ticketDetailsPoints" />
+
+                <EditText
+                    android:id="@+id/ticketDetailsCarTicketPointsId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:paddingBottom="15dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ticketDetailsEightLineId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ticketDetailsSixthLineId"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/ticketDetailsOfficeStatusLabelId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/ticketDetailsOfficeStatus" />
+
+                <EditText
+                    android:id="@+id/ticketDetailsOfficeStatusId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:paddingBottom="15dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ticketDetailsNinthLineId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ticketDetailsEightLineId"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ticketDetailsDetailsLabelId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/cupNotes" />
+
+                <EditText
+                    android:id="@+id/ticketDetailsDetailsId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:paddingBottom="15dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
 
 
 </android.support.constraint.ConstraintLayout>

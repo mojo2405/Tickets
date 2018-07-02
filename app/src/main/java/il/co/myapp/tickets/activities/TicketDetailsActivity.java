@@ -38,7 +38,6 @@ public class TicketDetailsActivity extends MenuActivity {
         ticketPlace = (EditText) findViewById(R.id.ticketDetailsCarTicketPlaceId);
         ticketClause = (EditText) findViewById(R.id.ticketDetailsCarTicketClauseId);
         ticketPoints = (EditText) findViewById(R.id.ticketDetailsCarTicketPointsId);
-        ticketDriversRequest = (EditText) findViewById(R.id.ticketDetailsCarTicketDriversRequestId);
         ticketDriversOfficeStatus = (EditText) findViewById(R.id.ticketDetailsOfficeStatusId);
         ticketDriversDetails = (EditText) findViewById(R.id.ticketDetailsDetailsId);
 
@@ -53,7 +52,6 @@ public class TicketDetailsActivity extends MenuActivity {
             ticketDate.setText(ticket.getTicketDate());
             ticketClause.setText(ticket.getFelonyClause());
             ticketPoints.setText(ticket.getPoints());
-            ticketDriversRequest.setText(ticket.getDriverRequest());
             ticketDriversOfficeStatus.setText(ticket.getOfficeStatus());
             ticketDriversDetails.setText(ticket.getDetails());
             ticketDayOfWeek.setText(ticket.getTicketDay());

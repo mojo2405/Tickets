@@ -241,6 +241,7 @@ NOTICKET  מעניקה לך בזאת, ואתה מקבל, רישיון אישי, 
     <string name="qaHeaderWhatThePoliceWillDo">מה תעשה המשטרה כשתרגיש את תוצאות השיטה?</string>
     <string name="textP10">הד\"ר: אין ספק שהמשטרה תצטרך התארגנות מחדש לעניין הזה, כולל שינוי בתקנות התעבורה.  אולם עד אז במצב הקיים - השיטה מנצחת‎!</string>
     <string name="fillManuallyText">מלא טופס ידנית</string>
+    <string name="cupNotes">הערות השוטר</string>
 
 
     <plurals name="proofsAttachedText">
