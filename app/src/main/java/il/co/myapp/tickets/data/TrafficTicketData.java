@@ -47,7 +47,7 @@ public class TrafficTicketData {
                         JSONObject ticketObject = ticketsArray.getJSONObject(i);
                         ticketList.add(new Ticket(
                                 ticketObject.get("DriverName").toString(),
-                                ticketObject.get("LicenseNumber").toString(),
+                                ticketObject.get("VehiclePlateNumber").toString(),
                                 ticketObject.get("PenaltyNumber").toString(),
                                 ticketObject.get("PenaltyDate").toString(),
                                 ticketObject.get("DayNumber").toString(),
