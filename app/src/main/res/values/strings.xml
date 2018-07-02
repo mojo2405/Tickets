@@ -243,6 +243,7 @@ NOTICKET  מעניקה לך בזאת, ואתה מקבל, רישיון אישי, 
     <string name="fillManuallyText">מלא טופס ידנית</string>
     <string name="cupNotes">הערות השוטר</string>
     <string name="ticketDetailsHeader">פרטי דו\"ח</string>
+    <string name="driverNotesFieldName">הערות הנהג</string>
 
 
     <plurals name="proofsAttachedText">

@@ -3,6 +3,7 @@ package il.co.myapp.tickets.activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import il.co.myapp.tickets.R;
 import il.co.myapp.tickets.controller.AppController;
@@ -11,35 +12,36 @@ import il.co.myapp.tickets.model.Ticket;
 
 public class TicketDetailsActivity extends MenuActivity {
 
-    private EditText driversName;
-    private EditText carsNumber;
-    private EditText ticketNumber;
-    private EditText ticketDate;
-    private EditText ticketHour;
-    private EditText ticketPlace;
-    private EditText ticketDayOfWeek;
-    private EditText ticketClause;
-    private EditText ticketPoints;
-    private EditText ticketDriversRequest;
-    private EditText ticketDriversOfficeStatus;
-    private EditText ticketDriversDetails;
+    private TextView driversName;
+    private TextView carsNumber;
+    private TextView ticketNumber;
+    private TextView ticketDate;
+    private TextView ticketHour;
+    private TextView ticketPlace;
+    private TextView ticketDayOfWeek;
+    private TextView ticketClause;
+    private TextView ticketPoints;
+    private TextView ticketDriversOfficeStatus;
+    private TextView ticketDriversDetails;
+    private TextView ticketDriversNotes;
     private Ticket ticket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_details);
-        carsNumber = (EditText) findViewById(R.id.ticketDetailsCarNumberId);
-        driversName = (EditText) findViewById(R.id.ticketDetailsDriverNameId);
-        ticketNumber = (EditText) findViewById(R.id.ticketDetailsTicketNumberId);
-        ticketDate = (EditText) findViewById(R.id.ticketDetailsCarTicketDateId);
-        ticketDayOfWeek = (EditText) findViewById(R.id.ticketDetailsCarTicketDayId);
-        ticketHour = (EditText) findViewById(R.id.ticketDetailsCarTicketHourId);
-        ticketPlace = (EditText) findViewById(R.id.ticketDetailsCarTicketPlaceId);
-        ticketClause = (EditText) findViewById(R.id.ticketDetailsCarTicketClauseId);
-        ticketPoints = (EditText) findViewById(R.id.ticketDetailsCarTicketPointsId);
-        ticketDriversOfficeStatus = (EditText) findViewById(R.id.ticketDetailsOfficeStatusId);
-        ticketDriversDetails = (EditText) findViewById(R.id.ticketDetailsDetailsId);
+        carsNumber = (TextView) findViewById(R.id.ticketDetailsCarNumberId);
+        driversName = (TextView) findViewById(R.id.ticketDetailsDriverNameId);
+        ticketNumber = (TextView) findViewById(R.id.ticketDetailsTicketNumberId);
+        ticketDate = (TextView) findViewById(R.id.ticketDetailsCarTicketDateId);
+        ticketDayOfWeek = (TextView) findViewById(R.id.ticketDetailsCarTicketDayId);
+        ticketHour = (TextView) findViewById(R.id.ticketDetailsCarTicketHourId);
+        ticketPlace = (TextView) findViewById(R.id.ticketDetailsCarTicketPlaceId);
+        ticketClause = (TextView) findViewById(R.id.ticketDetailsCarTicketClauseId);
+        ticketPoints = (TextView) findViewById(R.id.ticketDetailsCarTicketPointsId);
+        ticketDriversOfficeStatus = (TextView) findViewById(R.id.ticketDetailsOfficeStatusId);
+        ticketDriversDetails = (TextView) findViewById(R.id.ticketDetailsDetailsId);
+        ticketDriversNotes = (TextView)  findViewById(R.id.ticketDetailsDriverNotesId);
 
 
         ticket = AppController.getInstance().get_viewableTicket();
@@ -57,6 +59,7 @@ public class TicketDetailsActivity extends MenuActivity {
             ticketDayOfWeek.setText(ticket.getTicketDay());
             ticketHour.setText(ticket.getTicketTime());
             ticketPlace.setText(ticket.getTicketPlace());
+            ticketDriversNotes.setText(ticket.getDriverNotes());
         }
     }
 }
