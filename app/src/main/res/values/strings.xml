@@ -159,6 +159,7 @@ NOTICKET  מעניקה לך בזאת, ואתה מקבל, רישיון אישי, 
     <string name="newTicketPenaltyLocation">מיקום ביצוע העברה</string>
     <string name="newTicketPenaltyDescription">תיאור העברה</string>
     <string name="newTicketPenaltyNotes">הערות השוטר</string>
+    <string name="newTicketLastComment">הערות משרד</string>
     <string name="newTicketDriverNotes">הערות הנהג</string>
     <string name="newTicketPlateType">סוג לוחית רישוי</string>
     <string name="newTicketVehiclePlateNumber">מספר לוחית רישוי</string>

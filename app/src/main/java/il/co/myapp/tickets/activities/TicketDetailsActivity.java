@@ -24,6 +24,7 @@ public class TicketDetailsActivity extends MenuActivity {
     private TextView ticketDriversOfficeStatus;
     private TextView ticketDriversDetails;
     private TextView ticketDriversNotes;
+    private TextView ticketLastComment;
     private Ticket ticket;
 
     @Override
@@ -42,6 +43,7 @@ public class TicketDetailsActivity extends MenuActivity {
         ticketDriversOfficeStatus = (TextView) findViewById(R.id.ticketDetailsOfficeStatusId);
         ticketDriversDetails = (TextView) findViewById(R.id.ticketDetailsDetailsId);
         ticketDriversNotes = (TextView)  findViewById(R.id.ticketDetailsDriverNotesId);
+        ticketLastComment = (TextView)  findViewById(R.id.ticketLastCommentId);
 
 
         ticket = AppController.getInstance().get_viewableTicket();
@@ -60,6 +62,11 @@ public class TicketDetailsActivity extends MenuActivity {
             ticketHour.setText(ticket.getTicketTime());
             ticketPlace.setText(ticket.getTicketPlace());
             ticketDriversNotes.setText(ticket.getDriverNotes());
+            if(ticket.getLastComment() != "null"){
+                ticketLastComment.setText(ticket.getLastComment());
+            } else {
+                ticketLastComment.setText("אין הערות מהמשרד");
+            }
         }
     }
 }

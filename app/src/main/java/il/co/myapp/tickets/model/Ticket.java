@@ -30,6 +30,7 @@ public class Ticket {
     private String details;
     private String ticketPlace;
     private String driverNotes;
+    private String lastComment;
 
     public void setDriverRequest(String driverRequest) {
         this.driverRequest = driverRequest;
@@ -38,59 +39,59 @@ public class Ticket {
     private List<RequestHistory> _requestHistory;
 
     public String getTicketDay() {
-        return ticketDay;
+        return checkData(ticketDay);
     }
 
     public String getDriverName() {
-        return driverName;
+        return checkData(driverName);
     }
 
     public String getTicketTitle() {
-        return driverName;
+        return checkData(driverName);
     }
 
     public String getDescription() {
         return " תאריך פניה: " + ticketCreatedDate + "\n" +
                 " סטוס טיפול: " + officeStatus + "\n" +
-                 " מספר דוח תנועה: " + ticketNumber + "\n" +
-                " מספר רכב: " + carNumber ;
+                " מספר דוח תנועה: " + ticketNumber + "\n" +
+                " מספר רכב: " + carNumber;
     }
 
     public String getTicketNumber() {
-        return ticketNumber;
+        return checkData(ticketNumber);
     }
 
     public String getTicketDate() {
-        return ticketDate;
+        return checkData(ticketDate);
     }
 
     public String getTicketTime() {
-        return parsedTime;
+        return checkData(parsedTime);
     }
 
 
     public String getFelonyClause() {
-        return felonyClause;
+        return checkData(felonyClause);
     }
 
     public String getPoints() {
-        return points;
+        return checkData(points);
     }
 
     public String getDriverRequest() {
-        return driverRequest;
+        return checkData(driverRequest);
     }
 
     public String getCarNumber() {
-        return carNumber;
+        return checkData(carNumber);
     }
 
     public String getOfficeStatus() {
-        return officeStatus;
+        return checkData(officeStatus);
     }
 
     public String getDetails() {
-        return details;
+        return checkData(details);
     }
 
     public List<RequestHistory> get_requestHistory() {
@@ -98,20 +99,36 @@ public class Ticket {
     }
 
     public String getTicketPlace() {
-        return ticketPlace;
+        return checkData(ticketPlace);
     }
 
     public String getDriverNotes() {
-        return driverNotes;
+        return checkData(driverNotes);
     }
+
+    public String getLastComment() {
+
+        return checkData(lastComment);
+    }
+
+    private String checkData(String data){
+        if(data == null || data == "null"){
+            return "אין מידע";
+
+        }
+        else {
+            return data;
+        }
+    }
+
 
 
     public Ticket(String driverName, String carNumber, String ticketNumber, String ticketDate,
                   String ticketDay, String felonyClause, String points, String driverRequest,
                   String officeStatus, String details, List<RequestHistory> _requestHistory,
-                  String ticketCreatedDate, String ticketPlace, String driverNotes) {
+                  String ticketCreatedDate, String ticketPlace, String driverNotes, String lastComment) {
 
-        HashMap<String,String> map;
+        HashMap<String, String> map;
 
         this.ticketNumber = ticketNumber;
         this.carNumber = carNumber;
@@ -124,7 +141,7 @@ public class Ticket {
         this.ticketDay = ticketDay;
         this.ticketPlace = ticketPlace;
         this.driverNotes = driverNotes;
-
+        this.lastComment = lastComment;
         this.ticketCreatedDate = convertFormat(ticketCreatedDate);
 
         this._requestHistory = _requestHistory;
@@ -136,23 +153,23 @@ public class Ticket {
 
     }
 
-    public static HashMap<String,String> getDateAndTime(String inputDate) {
-        HashMap<String,String> map = new HashMap<>();
-        map.put("Date","");
-        map.put("Time","");
+    public static HashMap<String, String> getDateAndTime(String inputDate) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Date", "");
+        map.put("Time", "");
 
-        Log.v(TAG,"Got time input " + inputDate);
+        Log.v(TAG, "Got time input " + inputDate);
         Pattern datePattern = Pattern.compile("(\\w+[\\.\\-\\/]\\w+[\\.\\-\\/]\\w+)");
         Pattern timePattern = Pattern.compile("(\\d+:\\d+[:\\d]+)");
 
         Matcher dateMatcher = datePattern.matcher(inputDate);
-        if (dateMatcher.find()){
-            map.put("Date",dateMatcher.group(1));
+        if (dateMatcher.find()) {
+            map.put("Date", dateMatcher.group(1));
         }
 
         Matcher timeMatcher = timePattern.matcher(inputDate);
-        if (timeMatcher.find()){
-            map.put("Time",timeMatcher.group(1));
+        if (timeMatcher.find()) {
+            map.put("Time", timeMatcher.group(1));
         }
 
 
@@ -162,19 +179,18 @@ public class Ticket {
     public static String convertFormat(String inputDate) {
         SimpleDateFormat df1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         SimpleDateFormat df2 = new SimpleDateFormat("dd-MM-yyyy");
-        try{
+        try {
             inputDate = inputDate.replace('T', ' ');
             inputDate = inputDate.replace(".000Z", "");
 
             Date d = df1.parse(inputDate);
             return df2.format(d);
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            Log.e(TAG,e.getMessage());
+            Log.e(TAG, e.getMessage());
         }
         return "";
     }
-
 
 
 }
